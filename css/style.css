@@ -1,0 +1,349 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #364F6B;
+    margin: 0;
+  }
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+/*Container*/
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/*Intro*/
+.intro {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    top: 55px;
+}
+
+.intro__inner {
+    padding-top: 200px;
+    width: 100%;
+    max-width: 790px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro__title {
+    font-size: 60px;
+    text-align: center;
+    font-weight: normal;
+    line-height: 75px;
+    margin: 13px 0 13px;
+}
+
+.intro img {
+    height: 75px;
+    display: grid;
+    margin: 0 auto;
+}
+
+.intro__undtitle {
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+/*Header*/
+.header {
+    width: 100%;
+    position: absolute;
+    padding-top: 29px;
+}
+
+.header__menu {
+    display: flex;
+    align-items: center;
+}
+
+.header img{
+    float: left;
+    width: 120px;
+    height: 26px;
+}
+
+.header__toolbar {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.header__button {
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/*Nav*/
+.nav {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.nav__link {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.2s linear;
+    color: #364F6B;
+}
+
+.nav__link:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #0E9AA7;
+    opacity: 0;
+    transition: opacity 0.2s linear;
+}
+
+.nav__link:hover {
+    color: #0E9AA7;
+}
+
+.nav__link:hover:after {
+    opacity: 1;
+}
+
+/*Button*/
+.btn {
+    display: inline-block;
+    vertical-align: top;
+    background-color: #0E9AA7;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.small {
+    padding: 5px 10px;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+.main {
+    padding: 13px 70px;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+/*Advantages*/
+.advant {
+    margin: 156px 145px 170px 145px;
+}
+
+.advants {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.advant__title {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 76px;
+}
+
+.advant__card {
+    margin: 0 15px; 
+    padding: 15px 40px 30px;
+    width: 360px;
+    height: 430px;
+    box-shadow: 0px 6px 6px 4px rgba(0, 0, 0, 0.25);
+}
+
+.advant__image {
+    width: 164px;
+    height: 164px;
+    margin:0 50px 40px;
+}
+
+.advant__suptitle {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.advant__undtitle {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/*Form*/
+.form {
+    margin-top: 40px;
+}
+
+.form__col {
+    display: flex;
+    justify-content: center;
+}
+
+.form__free {
+    display: block;
+    margin: 0 auto 50px;
+    width: 942px;
+    height: 434px;
+    background: #FE8A71;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 11px;
+}
+
+.form__title {
+    padding-top: 30px;
+    margin-bottom: 90px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 51px;
+    color: #FFFFFF;
+}
+
+.form img {
+    width: 27px;
+    height: 27px;
+    float: left;
+}
+
+.form__lesson {
+    width: 390px;
+}
+
+.form__feat {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.form__humb {
+    margin-right: 10px;
+}
+
+.form__field {
+    width: 315px;
+    height: 44px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-weight: 300;
+    font-size: 24px;
+    background: #DC7059;
+    border-radius: 7px;
+    margin: 9px 40px 0;
+    padding-left: 13px;
+    border: 0 solid transparent;
+}
+
+.form__data {
+    margin-top: 120px;
+    margin-bottom: 30px;
+}
+
+.form__btn {
+    text-align: center;
+}
+
+.small__title {
+    font-weight: 300;
+    font-size: 13px;
+    color: #fff;
+    margin: 10px 0 0 60px;
+}
+
+/*Input*/
+input {
+    color: #fff;
+    font-weight: 300;
+    font-size: 24px;
+    font-style: normal;
+}
+
+input::-webkit-input-placeholder { 
+    color: #fff; 
+    font-weight: 300;
+    font-size: 24px;
+    font-style: normal;
+}
+
+/*Tariff*/
+.tariff {
+    margin: 156px 145px 76px 145px;
+}
+
+.tariffs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.tariff__title {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 76px;
+}
+
+.tariff__card {
+    margin: 0 15px; 
+    padding: 15px 40px 30px;
+    width: 359px;
+    height: 452px;
+    background: #0E9AA7;
+}
+
+.tariff__image {
+    width: 164px;
+    height: 164px;
+    margin:0 50px 40px;
+}
+
+.tariff__suptitle {
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 56px;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #FFFFFF;
+}
+
+.tariff__undtitle {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+}
