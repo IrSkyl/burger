@@ -1,21 +1,62 @@
-function slider(selector) {
-    let slider = $(selector);
-    let imgs = slider.children();
+const prev = document.getElementById('btn__prev'),
+      next = document.getElementById('btn__next'),
+      slides = document.querySelectorAll('.slide'),
+      dots = document.querySelectorAll('.dot');
 
-    slider
-        .addClass('slider')
-        .append('<a href="#" class="slider__arrow slider__arrow__left"></a>')
-        .append('<div class="slider__slides"></div>')
-        .append('<div class="slider__dots"></div>')
-        .append('<a href="#" class="slider__arrow slider__arrow__right"></a>');
+let index = 0;
+let sl = true;
 
-    let slides = slider.children('.slider__slides');
-    let dots = slider.children('slider__dots');
-
-    imgs
-        .preprendTo(slides);
+const activeSlide = n => {
+  for(slide of slides) {
+      slide.classList.remove('active');
+  }   
+  slides[n].classList.add('active');  
+}
+  
+const activeDot = n => {
+  for(dot of dots) {
+    dot.classList.remove('active');
+  }
+  dots[n].classList.add('active');
 }
 
+const prepareCurrentSlide = ind => {
+  activeDot(ind);
+  activeSlide(ind);
+}
+
+const nextSlide = () => {
+  if(index == slides.length - 1) {
+    index = 0;
+    prepareCurrentSlide(index);
+  } else {
+    index++;
+    prepareCurrentSlide(index);
+  }
+}
+
+const prevSlide = () => {
+  if(index == 0) {
+    index = slides.length - 1;
+    prepareCurrentSlide(index);
+  } else {
+    index--;
+    prepareCurrentSlide(index);
+  }
+}
+
+dots.forEach((item,indexDot) => {
+    item.addEventListener('click', () => {
+      index = indexDot;
+      prepareCurrentSlide(index);
+      clearInterval(interval);
+    })
+});
 
 
-slider('#slider');
+next.addEventListener('click', nextSlide2);
+prev.addEventListener('click', prevSlide);
+
+const interval = setInterval(nextSlide, 2000);
+
+ 
