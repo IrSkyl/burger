@@ -152,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /*Advantages*/
 .advant {
-    margin: 156px 145px 170px 145px;
+    margin: 156px 145px 100px 145px;
 }
 
 .advants {
@@ -203,7 +203,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /*Form*/
 .form {
-    margin-top: 40px;
+    padding-top: 100px;
 }
 
 .form__col {
@@ -231,12 +231,6 @@ h1, h2, h3, h4, h5, h6 {
     color: #FFFFFF;
 }
 
-.form img {
-    width: 27px;
-    height: 27px;
-    float: left;
-}
-
 .form__lesson {
     width: 390px;
 }
@@ -251,6 +245,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .form__humb {
     margin-right: 10px;
+    width: 27px;
+    height: 27px;
+    float: left;
 }
 
 .form__field {
@@ -299,7 +296,7 @@ input::-webkit-input-placeholder {
 
 /*Tariff*/
 .tariff {
-    margin: 156px 145px 76px 145px;
+    margin: 190px 145px 76px 145px;
 }
 
 .tariffs {
@@ -353,7 +350,7 @@ input::-webkit-input-placeholder {
     position: relative;
     overflow: hidden;
     max-width: 1600px;
-    margin: 0 auto 150px;
+    margin: 0 auto 50px;
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 30px;
@@ -481,6 +478,10 @@ input::-webkit-input-placeholder {
   }
 
   /*Footer*/
+  .footer {
+    padding-top: 30px;
+  }
+
   .footer__content {
     display: flex;
     flex-direction: row;
@@ -537,4 +538,161 @@ input::-webkit-input-placeholder {
 
   .bottom__logo {
     width: 194px;
+  }
+
+  /*Adaptive*/
+  @media screen and (min-width: 1200px) {
+    .container {
+      width: 1140px;
+    }
+  }
+
+  @media screen and (max-width: 1199px) {
+    .container {
+      width: 960px;
+    }
+
+    .advant__card, .tariff__card {
+      width: 40%;
+      margin: 10px;
+      padding: 10px;
+      height: 350px;
+    }
+
+    .advant__image, .tariff__image {
+      margin: 6px 20px;
+    }
+
+    .advant__suptitle, .tariff__suptitle {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .advant__undtitle {
+      font-size: 12px;
+    }
+
+    .tariff__undtitle {
+      font-size: 15px;
+    }
+
+    .form__free {
+      width: 880px
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    .container {
+      width: 720px;
+    }
+
+    .slider__content_img {
+      width: 150px;
+      margin: 0 50px;
+    }
+
+    .slider__content_title {
+      font-size: 14px;
+      margin-right: 30px;
+      padding: 0;
+    }
+
+    .slider__item {
+      margin-bottom: 30px;
+    }
+
+    .form__free {
+      width: 720px;
+    }
+
+    .form__lesson {
+      padding-left: 30px;
+    }
+
+    .form__title {
+      font-size: 38px;
+    }
+
+    .form__feat {
+      font-size: 18px;
+    }
+
+    .form__field {
+      margin-left: 15px;
+    }
+
+    .form__btn {
+      width: 320px;
+      margin-left: 15px;
+    }
+
+    .main {
+      font-size: 22px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .container {
+      width: 540px;
+    }
+
+    .advant__card, .tariff__card {
+      width: 50%;
+    }
+
+    .advant__image, .tariff__image {
+      margin: 0;
+    }
+
+    .advant__card {
+      height: 380px;
+    }
+
+    .form__free {
+      width: 540px;
+    }
+
+    .invis {
+      display: none;
+    }
+
+    .form__title {
+      display: none;
+    }
+
+    .form__feat {
+      display: none;
+    }
+
+    .form__field {
+      margin-left: 15px;
+    }
+
+    .form__btn {
+      width: 300px;
+      margin-left: 15px;
+    }
+
+    .main {
+      font-size: 20px;
+    }
+
+    .slider__content_img {
+      margin: 0 10px;
+    }
+
+    .slider__content_title {
+      font-size: 12px;
+      margin-right: 10px;
+      padding: 0;
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    .container {
+      width: 100%;
+      padding: 0 15px;
+    }
+
+    
   }

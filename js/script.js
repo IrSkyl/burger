@@ -284,3 +284,35 @@
     var slider = multiItemSlider('.slider', {
       isCycling: true
     });
+
+  $(document).ready(function() {
+    $("#btn1").on("click", function(e) {
+      e.preventDefault();
+      var top = $("#forma1").offset().top;
+      $("html, body").animate({
+        scrollTop: top
+      }, 1200);
+    });
+  });
+
+  $(document).ready(function() {
+    $("#btn2").on("click", function(e) {
+      e.preventDefault();
+      var top = $("#forma2").offset().top;
+      $("html, body").animate({
+        scrollTop: top
+      }, 1200);
+    });
+  });
+
+  $(document).ready(function() { 
+    $("a.nav__link").click(function(){
+      $("html, body").animate({
+        scrollTop: $($(this).attr("href")).offset().top + "px"
+      }, {
+        duration: 1200,
+        easing: "swing"
+      });
+      return false;
+    });
+  });
