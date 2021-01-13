@@ -1,0 +1,300 @@
+{
+    "let=": {
+        "prefix": "l=",
+        "body": "let ${1:name} = ${2:value};",
+        "description": "let assignment"
+    },
+    "const": {
+        "prefix": "co",
+        "body": "const ${1:name}",
+        "description": "const statement"
+    },
+    "const=": {
+        "prefix": "co=",
+        "body": "const ${1:name} = ${2:value};",
+        "description": "const assignment"
+    },
+    "if": {
+        "prefix": "if",
+        "body": [
+            "if (${1:condition}) {",
+                "\t${0}",
+            "}"
+        ],
+        "description": "if statement"
+    },
+    "if-else": {
+        "prefix": "ife",
+        "body": [
+            "if (${1:condition}) {",
+                "\t${0}",
+            "} else {",
+                "\t",
+            "}"
+        ],
+        "description": "else statement"
+    },
+    "for-of": {
+        "prefix": "fo",
+        "body": [
+            "for (let ${1:key} of ${2:source}) {",
+                "\t${0}",
+            "}"
+        ],
+        "description": "for of loop"
+    },
+    "while": {
+        "prefix": "wl",
+        "body": [
+            "while (${1:condition}) {",
+                "\t${0}",
+            "}"
+        ],
+        "description": "while statement"
+    },
+    "try-catch": {
+        "prefix": "tc",
+        "body": [
+            "try {",
+                "\t${0}",
+            "} catch (err) {",
+                "\t",
+            "}"
+        ],
+        "description": "try/catch"
+    },
+    "function": {
+        "prefix": "fn",
+        "body": [
+            "function ${1:name}(${2:arguments}) {",
+                "\t${0}",
+            "}"
+        ],
+        "description": "named function"
+    },
+    "arrow-function": {
+        "prefix": "af",
+        "body": [
+            "(${1:arguments}) => ${2:statement}"
+        ],
+        "description": "arrow function"
+    },
+    "arrow-function-width-body": {
+        "prefix": "afb",
+        "body": [
+            "(${1:arguments}) => {",
+                "\t${0}",
+            "}"
+        ],
+        "description": "arrow function with body"
+    },
+    "iife": {
+        "prefix": "iife",
+        "body": [
+            "(function (${1:arguments}) {",
+            "\t${0}",
+            "})(${2})"
+        ],
+        "description": "iife"
+    },
+    "forEach": {
+        "prefix": "fe",
+        "body": [
+            "${1:iterable}.forEach((${2:item}) => {",
+                "\t${0}",
+            "}"
+        ],
+        "description": "forEach"
+    },
+    "filter": {
+        "prefix": "filter",
+        "body": [
+            "${1:iterable}.filter((${2:item}) => {",
+                "\t${0}",
+            "}"
+        ],
+        "description": "filter"
+    },
+    "find": {
+        "prefix": "find",
+        "body": [
+            "${1:iterable}.find((${2:item}) => {",
+                "\t${0}",
+            "}"
+        ],
+        "description": "find"
+    },
+    "reduce": {
+        "prefix": "reduce",
+        "body": [
+            "${1:iterable}.reduce((${2:previous}, ${3:current}) => {",
+                "\t${0}",
+            "}${4:, initial});"
+        ],
+        "description": "reduce"
+    },
+    "class": {
+        "prefix": "cls",
+        "body": [
+            "class ${1:name} {",
+                "\tconstructor(${2:arguments}) {",
+                    "\t${0}",
+                "\t}",
+            "}"
+        ],
+        "description": "class"
+    },
+    "class-extend": {
+        "prefix": "cex",
+        "body": [
+            "class ${1:name} extends ${2:base} {",
+                "\tconstructor(${2:arguments}) {",
+                    "\tsuper(${2:arguments});",
+                    "\t${0}",
+                "\t}",
+            "}"
+        ],
+        "description": "class extend"
+    },
+    "method": {
+        "prefix": "med",
+        "body": [
+            "${1:method}(${2:arguments}) {",
+                "\t${0}",
+            "}"
+        ],
+        "description": "method"
+    },
+    "getter": {
+        "prefix": "get",
+        "body": [
+            "get ${1:property}() {",
+                "\t${0}",
+            "}"
+        ],
+        "description": "getter"
+    },
+    "setter": {
+        "prefix": "set",
+        "body": [
+            "set ${1:property}(${2:value}) {",
+                "\t${0}",
+            "}"
+        ],
+        "description": "setter"
+    },
+    "prototype": {
+        "prefix": "proto",
+        "body": [
+            "${1:Class}.prototype.${2:methodName} = function (${3:arguments}) {",
+                "\t${0}",
+            "}"
+        ],
+        "description": "prototype"
+    },
+    "Object.assign": {
+        "prefix": "oa",
+        "body": [
+            "Object.assign(${1:dest}, ${2:source});"
+        ],
+        "description": "Object assign"
+    },
+    "Object.keys": {
+        "prefix": "ok",
+        "body": [
+            "Object.keys(${1:obj})"
+        ],
+        "description": ""
+    },
+    "return promise": {
+        "prefix": "rp",
+        "body": [
+            "return new Promise((resolve, reject) => {",
+                "\t${0}",
+            "})"
+        ],
+        "description": "return Promise"
+    },
+    "export": {
+        "prefix": "ex",
+        "body": "export ${1:name};",
+        "description": "export"
+    },
+    "export-default": {
+        "prefix": "exd",
+        "body": "export default ${1:name};",
+        "description": "export default"
+    },
+    "import": {
+        "prefix": "im",
+        "body": "import ${1:*} from '${2:module}';",
+        "description": "module import"
+    },
+    "import as": {
+        "prefix": "ima",
+        "body": "import ${1:*} as ${2:name} from '${3:module}';",
+        "description": "module import as"
+    },
+    "module.exports": {
+        "prefix": "me",
+        "body": "module.exports = ${1:name};",
+        "description": "module.exports"
+    },
+    "require": {
+        "prefix": "re",
+        "body": "require('${1:module}');",
+        "description": "require"
+    },
+    "const-require": {
+        "prefix": "cre",
+        "body": "const ${1:name} = require('${2:module}');",
+        "description": "const require"
+    },
+    "console.log": {
+        "prefix": "cl",
+        "body": "console.log(${0});",
+        "description": "console.log"
+    },
+    "console.error": {
+        "prefix": "ce",
+        "body": "console.error(${0});",
+        "description": "console.error"
+    },
+    "console.warn": {
+        "prefix": "cw",
+        "body": "console.warn(${0});",
+        "description": "console.warn"
+    },
+    "use-strict": {
+        "prefix": "us",
+        "body": "'use strict';",
+        "description": "use strict"
+    },
+    "setTimeout": {
+        "prefix": "st",
+        "body": [
+            "setTimeout(() => {",
+                "\t${0}",
+            "}, ${1:delay});"
+        ],
+        "description": "setTimeout"
+    },
+    "setInterval": {
+        "prefix": "si",
+        "body": [
+            "setInterval(() => {",
+                "\t${0}",
+            "}, ${1:delay});"
+        ],
+        "description": "setInterval"
+    },
+    "setImmediate": {
+        "prefix": "sim",
+        "body": [
+            "setImmediate(() => {",
+                "\t${0}",
+            "});"
+        ],
+        "description": "setImmediate"
+    }
+}

@@ -1,0 +1,43 @@
+{
+	"name": "turbo-js",
+	"displayName": "Turbo JS",
+	"description": "turbo js for vscode, typescript and vue support",
+	"version": "1.0.2",
+	"publisher": "heflyaway",
+	"icon": "javascript.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/heflyaway/turbo-js-for-vscode"
+	},
+	"engines": {
+		"vscode": "^1.19.0"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "typescript",
+				"path": "./snippets/snippets.json"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/snippets.json"
+			},
+			{
+				"language": "vue",
+				"path": "./snippets/snippets.json"
+			},
+			{
+				"language": "html",
+				"path": "./snippets/snippets.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "c0a2e727-376c-4dcf-91d7-45e49b4989a6",
+		"publisherId": "f967ccc2-b979-4108-aa01-6f77050aa2c8",
+		"publisherDisplayName": "heflyaway"
+	}
+}
