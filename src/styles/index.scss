@@ -1,0 +1,5038 @@
+* {
+    box-sizing: border-box;
+    z-index: 100;
+  }
+  :root {
+    --color-white: #fff;
+    --color-violet: #703e97;
+    --color-orange: #ea7600;
+    --color-blue: #2a276e;
+    --main-font: "Raleway";
+    --main-color: #4b5563;
+    --main-font-size: 16px;
+    --color-grey: #a6a6a6;
+  }
+  a {
+    text-decoration: none !important;
+    color: inherit;
+  }
+  sup {
+    font-family: "Proxima Nova Rg";
+    font-display: swap;
+  }
+  span {
+    &.number {
+      font-family: "Manrope";
+      font-display: swap;
+    }
+  }
+  .section {
+    .ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__link_more {
+      border: none !important;
+      background: #ffd300 !important;
+      border-radius: 40px !important;
+      padding: 13px 34px !important;
+      margin-top: 28px !important;
+      float: right !important;
+      
+      }
+      .ya-share2__title {
+        font-family: Raleway;
+        font-display: swap;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: right;
+        letter-spacing: 0.3px;
+        color: #2A276E !important;
+    }
+      .ya-share2, .ya-share2 * {
+        float: right;
+    }
+    .ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__icon_more {
+      background-image: url(../../public/share.png);
+  }
+  }
+  .popup {
+    position: fixed;
+    max-width: 250px;
+    top: 100px;
+    right: 0;
+    -webkit-animation: pulsing 2% infinite;
+    animation: pulsing 2s infinite;
+    z-index: 1000;
+  }
+  .litera_list{
+    display: none;
+    &.active{
+      display: block;
+    }
+  
+  }
+  button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+  }
+  html {
+    background-color: var(--color-white);
+  }
+  
+  .wrapper {
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
+    overflow-x: hidden;
+    // overflow-y: scroll;
+    // -webkit-overflow-scrolling: touch;
+    background: var(--color-white);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(../../public/bg.jpg);
+     background-repeat: no-repeat;
+    padding-top: 17px;
+    background-size: cover;
+    padding-bottom: 37px;
+    background-position-y: bottom;
+    background-position-x: right;
+  }
+  .ya-share2 {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  body {
+    font-family: var(--main-font), sans-serif;
+    font-display: swap;
+    font-weight: normal;
+    font-style: normal;
+    font-size: var(--main-font-size);
+    color: var(--main-color);
+    line-height: 1.375;
+    letter-spacing: -0.035em;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    margin: 0;
+  }
+  
+  //text defaulte
+  .text {
+    &-manrope {
+      font-family: "Manrope", sans-serif;
+      font-display: swap;
+    }
+    &-center {
+      text-align: center;
+    }
+    &-bold {
+      font-weight: bold;
+    }
+    &-right {
+      text-align: right;
+    }
+    &-semi {
+      font-weight: 700;
+    }
+    &-italic {
+      font-style: italic;
+    }
+    &-normal {
+      font-weight: 500;
+    }
+    &-transform {
+      text-transform: uppercase;
+    }
+    &-white {
+      color: var(--color-white);
+    }
+    &-light {
+      font-weight: 300;
+    }
+    &-justify {
+      text-align: justify;
+    }
+  }
+  .text-margin + .text-margin {
+    margin-top: 20px;
+  }
+  .items-center {
+    margin: 0 auto;
+  }
+  //grid
+  .section {
+    // padding-top: 3em;
+    // padding-bottom: 3em;
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+    padding: 0 16px;
+  
+    &._wave {
+      &._top {
+        padding-top: 6em;
+      }
+      &._bottom {
+        padding-bottom: 6em;
+      }
+    }
+  }
+  .section__content {
+    & + .section__content {
+      margin-top: 2em;
+    }
+    .section__content {
+      margin-top: 2em;
+    }
+  }
+  .grid {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    z-index: 200;
+    max-width: 1170px;
+  }
+  .grid__row {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  //justify-content
+  .grid__row._lg_content_between {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .grid__row._lg_content_around {
+    justify-content: space-around;
+  }
+  .grid__row._lg_content_start {
+    justify-content: flex-start;
+  }
+  .grid__row._lg_content_end {
+    justify-content: flex-end;
+  }
+  .grid__row._lg_content_center {
+    justify-content: center;
+  }
+  //align-items
+  .grid__row._lg_items_end {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+  }
+  .grid__row._lg_items_start {
+    align-items: flex-start;
+  }
+  .grid__row._lg_items_center {
+    align-items: center;
+  }
+  .grid__row._lg_items_stretch {
+    align-items: stretch;
+  }
+  .grid__col {
+    padding-left: 15px;
+    padding-right: 15px;
+  
+    &._col_flex {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+  .grid__col._lg_1 {
+    width: 8.33333%;
+  }
+  .grid__col._lg_2 {
+    width: 16.66667%;
+  }
+  .grid__col._lg_3 {
+    width: 25%;
+  }
+  .grid__col._lg_4 {
+    width: 33.33333%;
+  }
+  .grid__col._lg_5 {
+    width: 41.66667%;
+  }
+  .grid__col._lg_6 {
+    width: 50%;
+  }
+  .grid__col._lg_7 {
+    width: 58.33333%;
+  }
+  .grid__col._lg_8 {
+    width: 66.66667%;
+  }
+  .grid__col._lg_9 {
+    width: 75%;
+  }
+  .grid__col._lg_10 {
+    width: 83.33333%;
+  }
+  .grid__col._lg_11 {
+    width: 91.66667%;
+  }
+  .grid__col._lg_12 {
+    width: 100%;
+  }
+  
+  .text-pink {
+    color: var(--color-pink);
+  }
+  
+  .text-violet {
+    color: var(--color-violet);
+  }
+  
+  .text-grey {
+    color: var(--color-grey);
+  }
+  
+  .text-blue {
+    color: var(--color-blue);
+  }
+  
+  .title {
+    //30
+    &._ex_lg {
+      font-size: 1.878em;
+    }
+    //28
+    &._ex_pack {
+      font-size: 1.75em;
+    }
+    //22
+    &._lg {
+      font-size: 1.5em;
+      line-height: 1.25;
+    }
+    //26
+    &._md {
+      font-size: 1.62em;
+      line-height: 1.3;
+    }
+    //20
+    &._md_2 {
+      font-size: 1.42em;
+      line-height: 1.3;
+    }
+    //18
+    &._sm {
+      font-size: 1.125em;
+      line-height: 1.388;
+    }
+    //15
+    &._doc_name {
+      font-size: 0.94em;
+      line-height: 18px;
+    }
+    //14
+    &._ex_pre_sm {
+      font-size: 0.88em;
+    }
+    //12
+    &._ex_sm2 {
+      font-size: 0.8em;
+    }
+    //11
+    &._ex_sm {
+      font-size: 0.7em;
+    }
+  }
+  ._flex {
+    display: flex;
+    flex-wrap: nowrap;
+    &._withwr {
+      flex-wrap: wrap;
+    }
+    &._nowr {
+      flex-wrap: nowrap !important;
+    }
+    &._end {
+      justify-content: flex-end;
+    }
+    &._f_start {
+      justify-content: flex-start;
+    
+    }
+  }
+  .slick-track {
+    display: flex;
+  }
+  
+  .slider {
+    min-width: 0;
+    position: relative;
+    padding: 24px 20px;
+    ._flex {
+      justify-content: start !important;
+      display: flex !important;
+    }
+    .slider__item {
+      height: 160px;
+    }
+    .slick-arrow {
+      position: absolute;
+      top: 50%;
+      font-size: 0;
+      width: 23px;
+      height: 21px;
+      margin-top: -10px;
+    }
+    .slick-disabled {
+      opacity: 0.2;
+    }
+    .slick-prev {
+      left: 0px;
+      background-image: url(../../public/prev.svg);
+      background-repeat: no-repeat;
+    }
+    .slick-next {
+      right: 0px;
+      background-image: url(../../public/next.png);
+      background-repeat: no-repeat;
+    }
+    .doc_1 {
+      max-width: 166px;
+      ._doc_name {
+        padding-bottom: 10px;
+      }
+    }
+    .doc_2 {
+      max-width: 199px;
+      ._doc_name {
+        padding-bottom: 10px;
+      }
+    }
+    .doc_3 {
+      max-width: 213px;
+      ._doc_name {
+        padding-bottom: 10px;
+      }
+    }
+    .doc_4 {
+      max-width: 210px;
+      ._doc_name {
+        padding-bottom: 4px;
+      }
+    }
+    .doc_5 {
+      max-width: 213px;
+      ._doc_name {
+        padding-bottom: 10px;
+      }
+    }
+  }
+  
+  .neir_ache {
+    background: #ea7600;
+    &.active {
+      color: #f3b577 !important;
+    }
+  }
+  
+  .noc_ache {
+    background: #4094b0;
+    &.active {
+      color: #a1cfde !important;
+    }
+  }
+  
+  .migren {
+    background: #9e007e;
+    &.active {
+      color: #df69c7 !important;
+    }
+  }
+  
+  .ishemic {
+    background: #703e97;
+    &.active {
+      color: #a870de !important;
+    }
+  }
+  
+  i {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px;
+    margin-left: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+  
+  .light {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    border: 3px solid #f1ebff;
+  }
+  
+  ._share {
+    background: #ffd300;
+    border-radius: 40px;
+    padding: 13px 34px;
+    margin-top: 28px;
+    float: right;
+    cursor: pointer;
+  }
+  
+  ._yellow {
+    width: 379px;
+    height: 76px;
+    align-items: center;
+    padding: 27px 40px;
+  }
+  
+  .sticky {
+    padding-top: 13px !important;
+    padding-bottom: 13px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 101;
+    background-color: white;
+    background-image: url(../../public/bg_header.svg);
+    background-size: cover;
+    
+  }
+  .sticky + .section {
+    padding-top: 85px;
+  }
+  
+  ._1 {
+    padding-top: 20px;
+    
+    .burger {
+      width: 64px;
+      opacity: 0;
+      display: none;
+    }
+    .logo_h {
+      max-width: 207px;
+    }
+    ._flex {
+      justify-content: space-between;
+      align-items: center;
+    }
+    .pad {
+      padding-top: 11px;
+      padding-bottom: 15px;
+    }
+  }
+  ._2 {
+   
+    .arrow_icon {
+      display: flex;
+   justify-content: center;
+   margin-top: 10px;
+    }
+    .pad {
+      max-width: 850px;
+      margin: auto;
+      padding-top: 11px;
+      padding-bottom: 15px;
+    }
+    .practice {
+      max-width: 45px;
+      margin-right: 28px;
+    }
+    ._practice_block {
+      max-width: 510px;
+    }
+    ._flex {
+      justify-content: space-between;
+      align-items: center;
+    }
+    .light_pad {
+      margin-top: 43px;
+      margin-bottom: 6px;
+      padding: 37px 66px 40px;
+    }
+    .slick-slide {
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+    .grid__col {
+      &._flex {
+        padding: 0;
+      }
+    }
+    .pad_doc {
+      padding: 20px 8px 33px 25px;
+      margin: auto;
+    }
+    ._ekusheva {
+      padding: 24px 8px 26px 15px;}
+    .doc {
+      max-width: 85px;
+      margin-right: 20px;
+      max-height: 85px;
+    }
+  }
+  ._3 {
+    .double_body {
+      position: relative;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .body {
+      position: relative;
+      margin: auto;
+      max-width: 1100px;
+    }
+    ._body {
+      position: relative;
+      z-index: 10;
+    }
+    .double_body::after {
+      content: "";
+      background-image: url(../../public/white_vector.png);
+      background-size: cover;
+      height: 200px;
+      position: absolute;
+      left: -50%;
+      width: 200%;
+      bottom: 0;
+      margin-left: -16px;
+      z-index: 100;
+    }
+    .migren {
+      position: absolute;
+      top: 5%;
+      left: 24%;
+      width: 248px;
+      height: auto;
+      padding: 32px 50px;
+      box-shadow: 0px 20px 30px rgba(170, 96, 155, 0.5);
+      border-radius: 0px 40px 40px 40px;
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+      .plashka {
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+      }
+    }
+    .ishemic {
+      position: absolute;
+      top: 12%;
+      left: 55%;
+      width: 415px;
+      height: auto;
+      padding: 27px 60px;
+      box-shadow: 0px 20px 30px rgba(153, 132, 170, 0.5);
+      border-radius: 0px 50px 50px 50px;
+    }
+    .neir_ache {
+      position: absolute;
+      top: 56%;
+      left: 0%;
+      width: 401px;
+      height: auto;
+      padding: 34px 41px;
+      box-shadow: 0px 20px 30px rgba(189, 132, 75, 0.5);
+      border-radius: 0px 40px 40px 40px;
+      transform: rotate(-180deg);
+      z-index: 200;
+      .plashka {
+        transform: rotate(-180deg);
+      }
+    }
+    .noc_ache {
+      position: absolute;
+      top: 68%;
+      left: 54%;
+      width: 382px;
+      height: auto;
+      padding: 34px 45px;
+      box-shadow: 0px 20px 30px rgba(116, 154, 167, 0.5);
+      border-radius: 40px 40px 40px 0px;
+      transform: matrix(1, 0, 0, -1, 0, 0);
+      z-index: 200;
+      .plashka {
+        transform: matrix(1, 0, 0, -1, 0, 0);
+      }
+    }
+    .pulsing {
+      &.migren::after {
+        top: -25px;
+        left: -25px;
+      }
+      &.ishemic::after {
+        top: -25px;
+        left: -25px;
+      }
+      &.neir_ache::after {
+        top: -25px;
+        left: -25px;
+      }
+      &.noc_ache::after {
+        top: 58px;
+        left: -25px;
+      }
+      &::after {
+        content: url("../../public/pulsing.png");
+        position: absolute;
+        -webkit-animation: pulsing 2s infinite;
+        animation: pulsing 2s infinite;
+      }
+      @-webkit-keyframes pulsing {
+        0% {
+          -webkit-transform: scale(0.9, 0.9);
+          transform: scale(0.9, 0.9);
+        }
+        50% {
+          -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+        }
+        100% {
+          -webkit-transform: scale(0.9, 0.9);
+          transform: scale(0.9, 0.9);
+        }
+      }
+      @keyframes pulsing {
+        0% {
+          -webkit-transform: scale(0.9, 0.9);
+          transform: scale(0.9, 0.9);
+        }
+        50% {
+          -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+        }
+        100% {
+          -webkit-transform: scale(0.9, 0.9);
+          transform: scale(0.9, 0.9);
+        }
+      }
+    }
+  
+  
+    .plashka {
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+  }
+  .fb {
+    display: flex;
+    height: 30px;
+    align-items: center;
+    position: absolute;
+    img {
+      max-width: 25px;
+    }
+  }
+  .vk_share {
+    display: flex;
+     height: 25px;
+     align-items: center;
+     img {
+       max-width: 30px;
+     }
+  }
+  ._4 {
+    padding-top: 85px;
+    padding-bottom: 90px;
+    position: relative;
+  .fake_radiculopathy {
+    position: absolute;
+    top: -95px;
+    width: 1px;
+    height: 1px;
+  }
+    .only_mob {
+      display: none;
+    }
+    .fb_iframe_widget {
+      iframe {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    } 
+    ._share {
+      position: relative;
+      z-index: 200;
+    }
+    .popup_share {
+      position: relative;
+    }
+    .socials {
+      display: none;
+      position: absolute;
+      width: 280px;
+    min-height: 120px;
+    padding: 20px 0;
+    bottom: auto;
+    border-radius: 25px;
+    background-color: #fff;
+    top: 40px;
+    right: 0;
+    padding: 30px 20px 0px;
+    &.active {
+      display: block;
+    }
+    }
+    .none_view {
+    display: flex;
+    flex-direction: column;
+    }
+    .musculoskeletal_pain {
+      .list_video {
+        padding: 0% 15px;
+    }
+    } 
+    .therapy_migren {
+      .list_video {
+        padding: 2% 25px;
+      }
+    }
+    .chronisation_therapy {
+      .list_video {
+        padding: 2% 25px;
+      }
+    }
+    .diagnos_mistake {
+      .list_video {
+        padding: 2% 25px;
+      }
+      .time_code {
+        .text-white {
+          margin: 1px 0;
+          line-height: 17px;
+        }
+      }
+    }
+    .chronic_ishemic_depress {
+      .list_video {
+        padding: 2% 35px;
+      }
+    }
+    .chronic_ishemic {
+      .list_video {
+        padding: 2% 35px;
+      }
+    }
+    .sermion_films {
+      .time_code {
+        .text-white {
+          margin: 6px 0;
+        }
+      }
+      .film {
+        height: 157px;
+        ._doc_name {
+          margin-bottom: 15px;
+          max-width: 175px;
+        }
+      }
+    }
+    .celebrex {
+      .slide {
+        height: 157px;
+        max-width: 142px;
+      }
+      .film {
+        ._doc_name {
+          margin-bottom: 15px;
+      }
+      }
+    } 
+    ._celebrex_scroll {
+      .list_films {
+        overflow-x: scroll;
+      }
+      .greyfilms_list {
+        display: flex;
+        width: 2200px;
+        margin-bottom: 20px;
+      }
+      .film {
+        width: 180px;
+      }
+    }
+    ._ag {
+      font-family: Manrope;
+      font-display: swap;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 23px;
+      letter-spacing: 0.5px;
+      color: #2e2e2e;
+      opacity: 0.5;
+    }
+    .btn_list {
+      position: relative;
+      &.btn_empty::after {
+        content: "";
+        background-image: none;
+      }
+    }
+    .btn_empty {
+      &.active {
+        .plashka {
+          position: relative;
+        }
+      }
+    }
+    .btn_list::after {
+      content: "";
+      background-image: url(../../public/arrow_wh_down.svg);
+      background-size: contain;
+      height: 15px;
+      width: 15px;
+      position: absolute;
+      right: 11%;
+      background-repeat: no-repeat;
+      top: 36px;
+      z-index: 2;
+    }
+    .active {
+      &.btn_list::after {
+        background-image: url(../../public/arrow_wh_up.svg);
+      }
+      &.btn_empty::after {
+        content: "";
+        background-image: none;
+      }
+      
+      &.migren::after {
+        background-image: url(../../public/arrow_wh_up.svg);
+      }
+   
+      &.ishemic::after {
+        background-image: url(../../public/arrow_wh_up.svg);
+      }
+    }
+  
+    .active {
+      .ache {
+        .down {
+          transform: rotate(45deg);
+          -webkit-transform: rotate(225deg);
+        }
+      }
+    }
+  
+    &.vektor_down::before {
+      padding-bottom: 125px;
+  
+      content: "";
+      background-image: url(../../public/white_vector_down.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 95%;
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      width: 115%;
+      bottom: 0;
+      margin-left: -16px;
+      margin-right: -16px;
+    }
+    margin-top: -23px;
+    // background-color: #fff;
+    // background-image: url(../../public/bg_video.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: bottom;
+    .list_li {
+      &.active {
+        padding-left: 20px;
+        .plashka {
+          font-weight: 700;
+          color: #ea7600;
+        }
+        .plashka::before {
+          content: "";
+          background-image: url(../../public/arrow_or_Icon.png);
+          background-size: contain;
+          height: 15px;
+          width: 15px;
+          position: absolute;
+          left: 0px;
+          background-repeat: no-repeat;
+          top: 25%;
+          z-index: 2;
+        }
+        ._pl_top {
+          &.plashka::before {
+            content: "";
+            background-image: url(../../public/arrow_or_Icon.png);
+            background-size: contain;
+            height: 15px;
+            width: 15px;
+            position: absolute;
+            left: 0px;
+            background-repeat: no-repeat;
+            top: 15%;
+            z-index: 2;
+          }
+        }
+      }
+      &.list_blue {
+        &.active {
+          padding-left: 20px;
+          .plashka {
+            color: #4094b0;
+          }
+          .plashka::before {
+            content: "";
+            background-image: url(../../public/arrow_blue_Icon.svg);
+            background-size: contain;
+            height: 15px;
+            width: 15px;
+            position: absolute;
+            left: 0;
+            background-repeat: no-repeat;
+            top: 25%;
+          }
+          ._pl_top {
+            &.plashka::before {
+              content: "";
+              background-image: url(../../public/arrow_blue_Icon.svg);
+              background-size: contain;
+              height: 15px;
+              width: 15px;
+              position: absolute;
+              left: 0;
+              background-repeat: no-repeat;
+              top: 13%;
+            }
+          }
+        }
+      }
+      &.list_viol {
+        &.active {
+          padding-left: 20px;
+          .plashka {
+            color: #703e97;
+          }
+          .plashka::before {
+            content: "";
+            background-image: url(../../public/arrow_viol_Icon.svg);
+            background-size: contain;
+            height: 15px;
+            width: 15px;
+            position: absolute;
+            left: 0;
+            background-repeat: no-repeat;
+            top: 10%;
+          }
+        }
+      }
+      &.list_rose {
+        &.active {
+          padding-left: 20px;
+          .plashka {
+            color: #9e007e;
+          }
+          .plashka::before {
+            content: "";
+            background-image: url(../../public/arrow_rose_Icon.svg);
+            background-size: contain;
+            height: 15px;
+            width: 15px;
+            position: absolute;
+            left: 0;
+            background-repeat: no-repeat;
+            top: 10%;
+          }
+        }
+      }
+    }
+    input {
+      padding: 0;
+    }
+    input[type="range"] {
+      width: 97%;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+    input[type="range"]::-webkit-slider-runnable-track {
+      border-radius: 0;
+      height: 1px;
+      border: 1px solid#E0E0E0;
+      background-color: #e0e0e0;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      background: #ffd300;
+      border: 4px solid #ffd300;
+      border-radius: 0;
+      cursor: pointer;
+      width: 57px;
+      height: 0;
+      -webkit-appearance: none;
+      margin-top: -4px;
+    }
+  
+    input[type="range"]::-moz-range-track {
+      border-radius: 0;
+      height: 1px;
+      border: 1px solid#E0E0E0;
+      background-color: #e0e0e0;
+    }
+    input[type="range"]::-moz-range-thumb {
+      border-radius: 0;
+      height: 1px;
+      border: 1px solid#E0E0E0;
+      background-color: #e0e0e0;
+    }
+    .icon_share {
+      max-width: 13px;
+      max-height: 13px;
+      padding-left: 0;
+      padding-top: 0;
+      margin-left: 5px;
+      margin-top: 3px;
+    }
+    .pad_all {
+      padding: 15px 50px 30px;
+    }
+    .ul {
+      display: block;
+      margin-top: -40px;
+      background: #f5f6f7;
+      border-radius: 0 0 35px 35px;
+      z-index: 1;
+      height: 100%;
+      .pad_top {
+        margin-top: 28px;
+      }
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      li {
+        min-width: 170px;
+        float: none;
+        display: list-item;
+        position: relative;
+      }
+    }
+    .ache {
+      cursor: pointer;
+      border-radius: 25px;
+      width: 100%;
+      padding: 25px 35px;
+      margin-bottom: 19px;
+      position: relative;
+      z-index: 2;
+    }
+    .plashka {
+      cursor: pointer;
+      font-size: 22px;
+      line-height: 32px;
+      letter-spacing: 0.005em;
+    }
+    ._none {
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+    li {
+      &a:active {
+        letter-spacing: 0.3px;
+        font-weight: bold;
+        color: #ea7600;
+      }
+    }
+    ._pad_both {
+      padding: 14px 0;
+    }
+    .item-video {
+      margin-top: 33px;
+      background: #f5f6f6;
+      border: 2px solid #ffffff;
+      border-radius: 35px 35px 0 0;
+      border-bottom: none;
+      position: relative;
+    }
+    .slide {
+      cursor: pointer;
+      height: 147px;
+      margin: 0 5px;
+      p {
+        height: 50px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        color: #7470a0;
+      }
+      .cartoon_d {
+        display: block;
+      }
+      .cartoon_a {
+        display: none;
+      }
+      &.active {
+        .cartoon_a {
+          display: block;
+        }
+        .cartoon_d {
+          display: none;
+        }
+        ._doc_name {
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 19px;
+          letter-spacing: -0.2px;
+  
+          color: #2a276e;
+        }
+      }
+    }
+    .range {
+      width: 100%;
+    }
+    .slick-list {
+      margin: 0 -5px;
+    }
+    .cartoon {
+      max-width: 157px;
+      max-height: 88px;
+    }
+    .icon_share {
+      max-width: 13px;
+        max-height: 13px;
+        padding-left: 0;
+        padding-top: 0;
+        margin-left: 5px;
+        margin-top: 3px;
+    }
+    .video_uno {
+      position: absolute;
+      top: 0;
+    }
+    .play_img {
+      width: 122px;
+    }
+    .list_video {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      padding: 4% 35px;
+    }
+  
+    .trigeminal_neurology {
+      .list_video {
+        padding: 0.5% 35px;
+      }
+    }
+    .diabetic_polyneiropathy {
+      .list_video {
+        padding: 2% 35px;
+      }
+    }
+    .star {
+      max-width: 30px;
+    }
+    .play_icon {
+      margin: auto;
+      text-align: center;
+      margin-top: 20%;
+      margin-bottom: 10%;
+    }
+    .radic {
+      height: auto;
+    }
+    video {
+      max-width: 95%;
+      border-radius: 35px;
+      margin: 0 1%;
+      ._ex_lg {
+        letter-spacing: 0.3px;
+      }
+      ._sm {
+        letter-spacing: 0.5px;
+      }
+    }
+    .grey_films {
+      background: #f5f6f6;
+      border: 2px solid #ffffff;
+      border-radius: 0 0 35px 35px;
+      padding: 29px 16px 49px;
+      border-top: none;
+      margin: auto;
+    }
+    .rating {
+      display: flex;
+      align-items: flex-end;
+      font-size: 22px;
+      line-height: 0.75;
+      padding-bottom: 20px;
+      letter-spacing: 4px;
+    }
+    .rating__body {
+      position: relative;
+    }
+    .rating__body::before {
+      content: "★★★★★";
+      display: block;
+      color: #fff;
+    }
+    .rating__active {
+      position: absolute;
+      width: 87%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+    }
+    .rating__active::before {
+      content: "★★★★★";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      color: #f5d84f;
+    }
+    .rating__items {
+      display: flex;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+    .rating__item {
+      flex: 0 0 20%;
+      height: 100%;
+      opacity: 0;
+    }
+    .rating__value {
+      font-size: 50%;
+      line-height: 1;
+      padding: 0 0 0 10px;
+    }
+    .time_code {
+      .text-white {
+        margin: 10px 0;
+        font-family: Manrope;
+        font-display: swap;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 19px;
+        letter-spacing: 0.5px;
+        max-width: 236px;
+      }
+      &.active {
+        p {
+          border-left: 2px solid #fff;
+          padding-left: 15px;
+          &.text-white {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .back_pain {
+      .rating {
+        padding-bottom: 0;
+      }
+      .list_video {
+        padding: 0% 35px;
+      }
+      .time_code {
+        .text-white {
+          margin: 15px 0;
+          max-width: 187px;
+        }
+      }
+    }
+    .tunnel_syndrome {
+      .rating {
+        padding-bottom: 0;
+      }
+      .list_video {
+        padding: 5% 35px;
+      }
+      .time_code {
+        .text-white {
+          margin: 15px 0;
+          max-width: 187px;
+        }
+      }
+    }
+  }
+  ._5 {
+    .article_neirontin {
+      ._grey {
+        max-width: 49%;
+        padding: 30px 20px;
+      }
+      .button_pink {
+        margin-top: 10px;
+      }
+    }
+    ._flex {
+      align-items: flex-end;
+    }
+    .search_celebrex {
+      
+      ._grey {
+        height: 240px;
+      }
+    }
+    
+    .viol_play {
+      max-width: 43px;
+      max-height: 43px;
+    }
+    .serm {
+      width: 47%;
+    }
+    .doze {
+      margin: auto;
+      margin-top: 20px;
+    }
+    .relpax_pack {
+      margin: auto;
+      margin-top: 20px;
+      max-width: 250px;
+    }
+    ._yellow {
+      position: relative;
+      width: 31%;
+    }
+    ._yellow::after {
+      content: "";
+      background-image: url(../../public/arrow_blue_down.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 32px;
+      position: absolute;
+      z-index: 2;
+      right: 7%;
+      width: 18px;
+      top: 41%;
+      margin-left: -16px;
+    }
+    ._empty {
+      &._yellow::after {
+        background-image: none;
+      }
+    }
+    .active {
+      &._yellow::after {
+        background-image: url(../../public/arrow_blue_up.svg);
+      }
+    }
+    .sermion {
+      .scheme {
+        max-width: 389px;
+      }
+      .serm_pad {
+        padding-bottom: 20px;
+        max-width: 310px;
+      }
+      .left_pack {
+        max-width: 350px;
+        margin: auto;
+      }
+      .right_pack {
+        max-width: 750px;
+        margin: auto;
+      }
+      .plus {
+        max-height: 155px;
+        max-width: 39px;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      ._ex_pack {
+        padding-bottom: 20px;
+      }
+    }
+    .light_serm {
+      margin-top: 32px;
+      margin-bottom: 36px;
+      background: #ffffff;
+      border: 1.5px solid #d8b2fc;
+      box-sizing: border-box;
+      border-radius: 30px;
+      padding: 22px;
+    }
+    .back_serm {
+      margin-top: 27px;
+      background: #703e97;
+      border-radius: 30px;
+      padding: 22px;
+      padding-bottom: 0;
+    }
+    &.neirontin {
+      ._flex {
+        width: 380px;
+      }
+    }
+    .neirontin {
+      .paddings {
+        padding: 31px 42px;
+        height: 404px;
+        width: 32%;
+      }
+      .article {
+        .button_pink {
+          margin-top: 30px;
+        }
+        ._grey {
+          max-width: 32%;
+          height: 230px;
+          &._none {
+            background-color: transparent;
+            box-shadow: none;
+          }
+          &.portraits {
+            padding: 30px 45px;
+            .button_pink {
+              margin-top: 18px;
+            }
+          }
+        }
+      }
+    }
+    .check_blue {
+      margin-right: 24px;
+      max-width: 41px;
+      max-height: 41px;
+    }
+    .relpax {
+      ._flex {
+        ._flex {
+          max-width: 318px;
+          margin-bottom: 20px;
+        }
+      }
+      ._ex_pack {
+        margin-bottom: 20px;
+      }
+    }
+    
+    .celebrex {
+      .search {
+        ._grey {
+          max-width: 32%;
+          &.large {
+            max-width: 66%;
+          }
+        }
+        .button_pink {
+          margin-top: 25px;
+        }
+      }
+      .article {
+        ._grey {
+          padding: 36px 70px;
+        }
+        .button_pink {
+          margin-left: 30px;
+        }
+      }
+      .paddings {
+        padding: 39px 60px;
+        height: 300px;
+      }
+      .paddings_first {
+        padding: 30px 60px;
+        height: 300px;
+      }
+      .pad_both {
+        padding-top: 37px;
+        padding-bottom: 33px;
+      }
+  
+      .pad_ache {
+        padding-top: 18px;
+        padding-bottom: 18px;
+      }
+      .pad_tab {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+      .pad_star {
+        padding-top: 21px;
+      }
+      .tab {
+        max-height: 25px;
+      }
+      .pad_left {
+        padding-left: 15px;
+      }
+      .pad_sec {
+        padding-top: 24px;
+        padding-bottom: 15px;
+      }
+      .first_block {
+        max-width: 788px;
+      }
+      .second_block {
+        max-width: 380px;
+      }
+      .buttons_yel {
+        ._flex {
+          justify-content: space-between;
+        }
+      }
+    }
+    .mar_top {
+      margin-top: 32px;
+      margin-bottom: 8px;
+    }
+    ._flex {
+      justify-content: space-between;
+      &._f_start {
+        justify-content: flex-start;
+        align-items: center;
+      }
+    }
+    .scheme_btn {
+      border-radius: 40px;
+      padding: 20px 0px;
+      width: 277px;
+    }
+    .pad_light {
+      padding: 51px;
+      margin-bottom: 22px;
+      margin-top: 43px;
+    }
+    .rasp {
+      padding-top: 15px;
+      max-height: 295px;
+    }
+    .border_line {
+      border-bottom: 1px solid #d8b2fc;
+      padding-bottom: 27px;
+      margin-bottom: 33px;
+      padding-top: 20px;
+    }
+    .neir_pad {
+      padding: 27px 0 23px;
+    }
+    ._grey {
+      background: #f5f6f7;
+      box-shadow: 0px 10px 15px rgba(104, 114, 120, 0.165308);
+      border-radius: 35px;
+      padding: 47px 25px;
+      margin-top: 36px;
+      &._flex {
+        align-items: center;
+      }
+    }
+    .button_pink {
+      background: #e9d2ff;
+      border-radius: 40px;
+      width: 133px;
+      height: 47px;
+      align-items: center;
+      justify-content: center;
+      &._flex {
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .arrow_pdf {
+      width: 15px;
+      margin-left: 11px;
+    }
+  }
+  
+  ._6 {
+    ._violet {
+      background: #703e97;
+      border-radius: 25px;
+      padding: 46px 44px;
+      width: 380px;
+      height: 463px;
+      margin-top: 34px;
+      position: relative;
+      .reg_2 {
+        max-width: 268px;
+      }
+      .reg_3 {
+        max-width: 230px;
+      }
+      ._speaker_text {
+        font-family: Raleway;
+        font-display: swap;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12.5px;
+  line-height: 16px;
+      }
+      ._date {
+        font-family: Manrope;
+        font-display: swap;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 25px;
+        padding-bottom: 27px;
+        color: #f1ebff;
+      }
+      ._doc_name {
+        padding-bottom: 16px;
+        font-size: 15px;
+        line-height: 18px;
+        font-weight: 400;
+      }
+      ._md_2 {
+        padding-bottom: 13px;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 23px;
+      }
+      ._ex_sm_2 {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+      }
+    }
+    ._flex {
+      justify-content: space-between;
+    }
+    ._share {
+      box-shadow: 0px 20px 30px rgba(197, 166, 20, 0.3);
+      width: 296px;
+      height: 75px;
+      padding: 28px;
+      margin-top: 10px;
+      position: absolute;
+      bottom: 8%;
+      p {
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+    }
+    .socials {
+      width: 296px;
+    }
+    .pad_title {
+      padding-top: 119px;
+    }
+  }
+  
+  ._7 {
+    .ended {
+      padding-top: 40px;
+    }
+    .logo {
+      max-width: 160px;
+      max-height: 42px;
+    }
+    .mar_top {
+      margin-top: 82px;
+      margin-bottom: 46px;
+    }
+    ._flex {
+      justify-content: space-between;
+    }
+    .pad_top {
+      padding-top: 20px;
+    }
+  }
+  @media (max-width: 1310px) {
+  
+    ._4 {
+      .musculoskeletal_pain {
+        .list_video {
+          padding: 0% 35px;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 1280px) {
+    ._6 {
+      ._share {
+        width: 296px;
+        height: 65px;
+        padding: 25px;
+        margin-top: 10px;
+      }
+    }
+  }
+  @media (max-width: 1250px) {
+  
+    ._4 {
+      .musculoskeletal_pain {
+        .time_code {
+          .text-white {
+            margin: 0px 0;
+          }
+        }
+      }
+    }
+    ._5 {
+      .sermion {
+        .pad_light {
+          margin-top: 0;
+          padding: 50px 0 0 0;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 1190px) {
+  
+    ._6 {
+      ._lg_content_between {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: center;
+      }
+      ._violet {
+        margin: 20px auto;
+      }
+    }
+  }
+  
+  @media (max-width: 1130px) {
+    ._2 {
+      ._ekusheva {
+        padding: 24px 8px 26px 15px;
+        .doc {
+          margin-right: 10px;
+        }
+      }
+      .pad_doc {
+        padding: 20px 8px 30px 15px;
+      }
+    }
+    ._4 {
+      .back_pain {
+        .list_video {
+          padding: 0% 35px;
+        }
+      }
+      .tunnel_syndrome {
+        .list_video {
+          padding: 3% 35px;
+        }
+      }
+      .list_video {
+        padding: 3% 35px;
+      }
+    }
+    ._5 {
+      ._yellow {
+        max-width: 310px;
+        padding: 27px 35px;
+      }
+      .scheme_btn {
+        margin-right: 10px;
+      }
+    }
+  }
+  @media (max-width: 1100px) {
+    ._3 {
+      .double_body::after {
+        height: 150px;
+      }
+    }
+    ._4 {
+      .play_img {
+        width: 100px;
+      }
+      .musculoskeletal_pain {
+        .list_video {
+          padding: 0% 35px;
+        }
+      }
+      .back_pain
+       {
+        .list_video {
+          padding: 0% 35px;
+        }
+      }
+      .tunnel_syndrome {
+        .list_video {
+          padding: 2% 35px;
+        }
+      }
+      .rating {
+        font-size: 20px;
+      }
+    }
+    ._5 {
+      .sermion{
+        .scheme {
+        max-width: 100%;
+      }
+    }
+    }
+  }
+  @media (max-width: 1090px) {
+   
+    ._4 {
+      .musculoskeletal_pain {
+        .list_video {
+          padding: 0% 15px;
+        }
+      }
+      .kognitive_disfunction {
+        .list_video {
+          padding: 3% 25px;
+        }
+        .time_code {
+          .text-white {
+            line-height: 17px;
+          }
+        }
+      }
+      .therapy_migren {
+        .list_video {
+          padding: 1% 15px;
+        }
+        .time_code {
+          .text-white {
+            margin: 11px 0;
+            line-height: 19px;
+          }
+        }
+      }
+      .chronisation_therapy {
+        .list_video {
+          padding: 2% 15px;
+        }
+        .time_code {
+          .text-white {
+            margin: 3px 0;
+            line-height: 19px;
+          }
+        }
+      }
+      .diagnos_mistake {
+        .list_video {
+          padding: 1% 15px;
+        }
+        .time_code {
+          .text-white {
+            margin: 1px 0;
+            line-height: 16px;
+          }
+        }
+      }
+      .chronic_ishemic_depress {
+        .list_video {
+          padding: 2% 35px;
+        }
+        .time_code {
+          .text-white {
+            line-height: 17px;
+          }
+        }
+      }
+      .chronic_ishemic {
+        .list_video {
+          padding: 2% 35px;
+        }
+        .time_code {
+          .text-white {
+            margin: 3px 0;
+            line-height: 19px;
+          }
+        }
+      }
+    }
+  
+    .cartoon {
+      max-width: 137px;
+    }
+    .list_video {
+      padding: 2% 35px;
+    }
+    .play_img {
+      width: 90px;
+    }
+    .time_code {
+      .text-white {
+        max-width: 250px;
+        margin: 7px 0;
+      }
+    }
+    .radiculopatia {
+      .list_video {
+        padding: 1% 25px;
+      }
+    }
+    .diabetic_polyneiropathy {
+      .time_code {
+        .text-white {
+          line-height: 17px;
+        }
+      }
+    }
+    .trigeminal_neurology {
+      .time_code {
+        .text-white {
+          line-height: 15px;
+        }
+      }
+    }
+  }
+  @media (max-width: 1050px) {
+    ._4 {
+      
+      .sermion_films {.film {._doc_name {
+        margin-bottom: 30px;}
+    }}
+      .radiculopatia {
+        .time_code {
+          .text-white {
+            line-height: 17px;
+          }
+        }
+      }
+      .slide {
+        .film {
+          max-width: 140px;
+        }
+        .cartoon {
+          max-width: 140px;
+        }
+      }
+    }
+  }
+  @media (max-width: 1030px) {
+  ._3 {
+    .body {
+      max-width: 400px;
+    }
+    .migren {
+      left: 22%;
+    }
+  }
+    ._4 {
+      .btn_list::after {
+        top: 32px;
+      }
+      .trigeminal_neurology {
+        .list_video {
+          padding: 2% 15px;
+        }
+      }
+      .chronic_ishemic_depress {
+        .list_video {
+          padding: 2% 15px;
+        }
+      }
+      .chronic_ishemic {
+        .list_video {
+          padding: 2% 15px;
+        }
+      }
+      .musculoskeletal_pain {
+        .list_video {
+          padding: 0% 15px;
+        }
+      }
+      .back_pain {
+        .list_video {
+          padding: 0% 15px;
+        }
+      }
+      .tunnel_syndrome {
+        .list_video {
+          padding: 0% 15px;
+        }
+        .time_code {
+          .text-white {
+           line-height: 18px;
+          }
+        }
+      }
+      .diabetic_polyneiropathy {
+        .list_video {
+          padding: 1% 15px;
+        }
+      }
+      .pad_all {
+        padding: 15px 30px 30px;
+      }
+      .ache {
+        padding: 20px 15px;
+      }
+      .plashka {
+        font-size: 20px;
+      }
+      .list_video {
+        padding: 1% 15px;
+      }
+      .time_code {
+        .text-white {
+          max-width: 250px;
+          margin: 5px 0;
+        }
+      }
+    }
+    ._5 {
+      
+      .sermion {
+        ._flex {
+          &._serm {
+            display: block;
+          }
+        }
+      }
+  
+      ._grey_blocks {
+        ._grey {
+          padding: 25px 35px;
+          ._md {
+            font-size: 1.3em;
+          }
+        }
+      }
+      ._yellow {
+       
+        width: 259px;
+        height: 75px;
+        align-items: center;
+        padding: 15px 40px;
+        &.relp_search {
+          padding: 30px 40px;
+        }
+        &._downlo {
+          padding: 27px 40px;
+        }
+      }
+      .neirontin {
+        .paddings {
+          padding: 31px 42px;
+          height: 404px;
+          width: 38%;
+          margin: auto;
+          &._l_third {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 970px) {
+   
+    ._4 {
+      .btn_list::after {
+        right: 7%;
+      }
+      .tunnel_syndrome {
+        .list_video {
+          padding: 1% 15px;
+        }
+        .time_code {
+          .text-white {
+           line-height: 15px;
+          }
+        }
+      }
+      .sermion_films {.film {._doc_name {
+        margin-bottom: 30px;}
+    }}
+      .chronic_ishemic_depress{
+        .time_code{.text-white {
+          line-height: 15px;
+      }} 
+      } 
+   .kognitive_disfunction {
+    .time_code {
+      .text-white {
+        line-height: 15px;
+    }
+    }
+   }
+      .chronic_ishemic {.time_code {.text-white {
+        margin: 3px 0;
+        line-height: 15px;
+    }}}
+      .therapy_migren {.time_code {
+        .text-white {
+          margin: 11px 0;
+          line-height: 15px;
+      }
+      } }
+    .chronisation_therapy {
+      .time_code {
+        .text-white {
+          margin: 3px 0;
+          line-height: 17px;
+      }
+      }
+    }
+      .diagnos_mistake {
+        .time_code {
+          .text-white {
+            line-height: 13px;
+          }
+        }
+      }
+      .musculoskeletal_pain {
+        .time_code {
+          .text-white {
+            margin: 8px 0;
+          }
+        }
+      }
+      .radiculopatia {
+        .list_video {
+          padding: 2% 15px;
+        }
+      }
+      .diabetic_polyneiropathy {
+        .list_video {
+          padding: 3% 15px;
+        }
+      }
+      .back_pain {
+        .list_video {
+          padding: 6% 35px;
+        }
+      }
+      .diabetic_polyneiropathy {
+        .time_code {
+          .text-white {
+            margin: 0;
+          }
+        }
+      }
+      i {
+        margin-left: 10px;
+      }
+      .play_img {
+        width: 70px;
+      }
+      .ache {
+        padding: 20px 10px;
+      }
+      .time_code {
+        .text-white {
+          margin: 3px 0;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 920px) {
+  
+    ._4 {
+     
+      .chronic_ishemic_depress {
+        .time_code {
+          .text-white {
+            line-height: 14px;
+        }
+        }
+      }
+      .chronic_ishemic_signs {
+        .time_code {
+          .text-white {
+            line-height: 18px;
+        }
+        }
+      }
+      .kognitive_disfunction {
+        .time_code {
+          .text-white {
+            line-height: 14px;
+        }
+        }
+      }
+     .chronisation_therapy {
+      .time_code {
+        .text-white {
+          line-height: 16px;
+      }
+      }
+     }
+      .trigeminal_neurology {
+        .time_code {
+          .text-white {
+            line-height: 13px;
+        }
+        }
+      } 
+      .diabetic_polyneiropathy{
+        .time_code {
+          .text-white {
+            margin: 1px 0;
+        }
+        }
+      } 
+      .back_pain {
+        .list_video {
+          padding: 6% 35px;
+        }
+      }
+      .plashka {
+        font-size: 19px;
+      }
+      .time_code {
+        .text-white {
+          margin: 5px 0;
+          font-size: 10px;
+        }
+      }
+      i {
+        margin-left: 5px;
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    ._1 {
+      .logo_h {
+        max-width: 187px;
+      }
+    }
+    ._2 {
+      .doc {
+        max-width: 75px;
+        max-height: 75px;
+      }
+    }
+    ._4 {
+      .btn_list::after {
+        right: 5%;
+      }
+      .tunnel_syndrome {
+        .list_video {
+          padding: 0% 15px;
+        }
+        .time_code {
+          .text-white {
+           line-height: 14px;
+          }
+        }
+      }
+      .sermion_films {
+        .film {
+          ._doc_name {
+            margin-bottom: 15px;
+        }
+        }
+      }
+     
+      .kognitive_disfunction {
+        .list_video {
+          padding: 1% 15px;
+        }
+      }
+      .diagnos_mistake {
+        .time_code {
+          .text-white {
+            line-height: 12px;
+        }
+        }
+      }
+      .radiculopatia {
+        .time_code {
+          .text-white {
+            line-height: 15px;
+        }
+        }
+      }
+      .musculoskeletal_pain {
+        .list_video {
+          padding: 0% 15px;
+        }
+      }
+    }
+    .burger {
+      max-width: 54px;
+    }
+  }
+  @media (max-width: 860px) {
+  
+    ._4 {
+      .list_li {
+        &.active {
+          .plashka::before{
+            width: 12px;
+            height: 12px;
+            top: 24%;
+          }
+        }
+      }
+      .list_li {
+        &.list_blue {
+          &.active {
+            .plashka::before{
+              width: 12px;
+              height: 12px;
+              top: 24%;
+            }
+          }
+        }
+       
+      }
+      .list_li {
+        &.list_rose {
+          &.active {
+            .plashka::before{
+              width: 12px;
+              height: 12px;
+              top: 12%;
+            }
+          }
+        }
+       
+      }
+      .list_li {
+        &.list_viol {
+          &.active {
+            .plashka::before{
+              width: 12px;
+              height: 12px;
+              top: 12%;
+            }
+          }
+        }
+       
+      }
+      .btn_list::after {
+        right: 9%;
+        top: 21px;
+      }
+      .tunnel_syndrome {
+        .list_video {
+          padding: 0% 15px;
+        }
+        .time_code {
+          .text-white {
+           line-height: 13px;
+          }
+        }
+      }
+      .chronic_ishemic_depress {
+        .time_code {
+          .text-white {
+            margin: 7px 0;
+            line-height: 13px;
+          }
+        }
+      }
+      .chronic_ishemic_signs {
+        .list_video {
+          padding: 3% 15px;
+        }
+        .time_code {
+          .text-white {
+            line-height: 15px;
+          }
+        }
+      }
+      .therapy_migren {
+        .time_code {
+          .text-white {
+            margin: 8px 0;}}
+      }
+      .chronisation_therapy {
+        .time_code {
+          .text-white {
+            margin: 4px 0;
+            line-height: 14px;
+          }
+        }
+      }
+      .trigeminal_neurology {
+        .time_code {
+          .text-white {
+            margin: 7px 0;
+            line-height: 12px;
+          }
+        }
+      }
+      .diabetic_polyneiropathy {
+        .list_video {
+          padding: 1% 15px;
+        }
+        .time_code {
+          .text-white {
+            margin: 6px 0;
+            font-size: 9px;
+            line-height: 14px;
+          }
+        }
+      }
+      ._flex_end {
+        padding-bottom: 15px;
+      }
+      .time_code {
+        .text-white {
+          margin: 6px 0;
+          font-size: 9px;
+          line-height: 17px;
+        }
+      }
+      padding-top: 10px;
+      .btn_list {
+        margin-bottom: 15px;
+      }
+      .pad_all {
+        padding: 25px 15px 15px;
+      }
+      .ul {
+        height: 100%;
+      }
+      .plashka {
+        font-size: 1.15em;
+        line-height: 22px;
+      }
+      .ache {
+        padding: 15px;
+        width: 90%;
+        margin: 0px auto;
+      }
+      .ul_list {
+        width: 90%;
+        margin: auto;
+      }
+    }
+    ._5 {
+      .neirontin {
+        ._l_third {
+          padding: 25px;
+        }
+        .article {
+          ._grey {
+            &.portraits {
+              padding: 25px 35px;
+            }
+          }
+        }
+      }
+    }
+    ._7 {
+      .logo {
+        max-width: 120px;
+        max-height: 38px;
+      }
+    }
+  }
+  
+  @media (max-width: 800px) {
+   
+    ._4 {
+      ._share {
+        width: 264px;
+      }
+      .socials {
+        width: 264px;
+      }
+      .tunnel_syndrome {
+        .list_video {
+          padding: 0% 15px;
+        }
+        .time_code {
+          .text-white {
+           line-height: 12px;
+          }
+        }
+      }
+      .chronic_ishemic_depress {
+        .time_code {
+          .text-white {
+            line-height: 11px;
+          }
+        }
+      }
+      .chronic_ishemic_signs {
+        .time_code {
+          .text-white {
+            line-height: 14px;
+          }
+        }
+      }
+      .kognitive_disfunction {
+        .time_code {
+          .text-white {
+            line-height: 11px;
+            margin: 7px 0;
+          }
+        }
+      }
+      .chronic_ishemic {
+        .time_code {
+          .text-white {
+            line-height: 12px;
+            margin: 5px 0;
+          }
+        }
+      }
+      .therapy_migren {
+        .time_code {
+          .text-white {
+            line-height: 13px;
+            margin: 6px 0;
+          }
+        }
+      }
+      .chronisation_therapy {
+        .time_code {
+          .text-white {
+            line-height: 13px;
+          }
+        }
+      }
+      .diagnos_mistake {
+        .time_code {
+          .text-white {
+            line-height: 10px;
+            margin: 3px 0;
+          }
+        }
+      }
+      .musculoskeletal_pain {
+        .time_code {
+          .text-white {
+            line-height: 13px;
+          }
+        }
+      }
+      .trigeminal_neurology {
+        .time_code {
+          .text-white {
+            line-height: 11px;
+            margin: 6px 0;
+          }
+        }
+      }
+      .diabetic_polyneiropathy {
+        .time_code {
+          .text-white {
+            line-height: 12px;
+          }
+        }
+      }
+      .radiculopatia {
+        .time_code {
+          .text-white {
+            line-height: 13px;
+          }
+        }
+      }
+      .musculoskeletal_pain {
+        .list_video {
+          padding: 0% 15px;
+        }
+      }
+      .back_pain {
+        .list_video {
+          padding: 0% 35px;
+        }
+      }
+      .time_code {
+        .text-white {
+          line-height: 16px;
+        }
+      }
+    }
+    ._6 {
+      ._violet {
+        height: 100%;
+        ._end_block {
+          margin-top: 80px;
+        }
+      }
+    }
+  }
+  @media (max-width: 1059px) {
+    .slider {
+      .doc_1 {
+        max-width: 366px;
+      }
+      .doc_2 {
+        max-width: 366px;
+      }
+      .doc_3 {
+        max-width: 366px;
+      }
+      .doc_4 {
+        max-width: 366px;
+      }
+      .doc_5 {
+        max-width: 366px;
+      }
+    }
+  }
+  @media (max-width: 790px) {
+    .grid {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 10px;
+      padding-right: 10px;
+      width: 100%;
+      z-index: 200;
+      max-width: 750px;
+    }
+    .section__content .section__content {
+      margin-top: 1em;
+    }
+    .grid__col._md_12 + .grid__col._md_12 {
+      margin-top: 1em;
+    }
+    .grid__row._md_reverse {
+      flex-direction: row-reverse;
+    }
+    .grid__row._md_reverse_col {
+      flex-direction: column-reverse;
+    }
+    .grid__row._md_reverse .text-right {
+      text-align: left;
+    }
+    .grid__row._md_content_center {
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+    .grid__row._md_items_start {
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+    }
+    .grid__row._md_items_end {
+      -webkit-box-align: end;
+      -ms-flex-align: end;
+      align-items: flex-end;
+    }
+    .grid__row._md_items_center {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+    .grid__row._md_items_center {
+      align-items: space-between;
+    }
+    .grid__col._md_1 {
+      width: 8.33333%;
+    }
+    .grid__col._md_2 {
+      width: 16.66667%;
+    }
+    .grid__col._md_3 {
+      width: 25%;
+    }
+    .grid__col._md_4 {
+      width: 33.33333%;
+    }
+    .grid__col._md_5 {
+      width: 41.66667%;
+    }
+    .grid__col._md_6 {
+      width: 45%;
+    }
+    .grid__col._md_7 {
+      width: 58.33333%;
+    }
+    .grid__col._md_8 {
+      width: 66.66667%;
+    }
+    .grid__col._md_9 {
+      width: 75%;
+    }
+    .grid__col._md_10 {
+      width: 83.33333%;
+    }
+    .grid__col._md_11 {
+      width: 91.66667%;
+    }
+    .grid__col._md_12 {
+      width: 100%;
+    }
+    body {
+      font-size: 14px;
+    }
+    .break {
+      word-break: break-word;
+    }
+    .title {
+      //30
+      &._ex_lg {
+        font-size: 1.458em;
+      }
+      //28
+      &._ex_pack {
+        font-size: 1.458em;
+      }
+      //22
+      &._lg {
+        font-size: 1.458em;
+        line-height: 1.25;
+      }
+      //26
+      &._md {
+        font-size: 1.458em;
+        line-height: 1.3;
+      }
+      //20
+      &._md_2 {
+        font-size: 1.2em;
+        line-height: 1.3;
+      }
+      //18
+      &._sm {
+        font-size: 0.9em;
+        line-height: 1.388;
+      }
+      //15
+      &._doc_name {
+        font-size: 0.7em;
+        line-height: 18px;
+      }
+      //14
+      &._ex_pre_sm {
+        font-size: 0.7em;
+      }
+      //12
+      &._ex_sm2 {
+        font-size: 0.7em;
+      }
+      //11
+      &._ex_sm {
+        font-size: 0.7em;
+      }
+    }
+    ._1 {
+      .light_pad {
+        padding: 37px 16px 40px;
+        margin-top: 30px;
+      }
+      .logo_h {
+        max-width: 170px;
+      }
+      .burger {
+        width: 50px;
+      }
+    }
+    ._2 {
+      .light_pad {
+        padding: 37px 16px 40px;
+        margin-top: 30px;
+      }
+      .logo_h {
+        max-width: 170px;
+      }
+      .burger {
+        width: 50px;
+      }
+      .slider {
+        .slider__item {
+          height: 150px;
+        }
+      }
+    }
+    ._3 {
+      margin-bottom: 65px;
+      .migren {
+        left: 18%;
+        width: 204px;
+        padding: 18px 25px;
+      }
+      .neir_ache {
+        width: 250px;
+        padding: 18px 20px;
+      }
+      .ishemic {
+        width: 280px;
+        padding: 10px 25px;
+      }
+      .noc_ache {
+        width: 240px;
+        padding: 20px 25px;
+      }
+      .pulsing {
+        &.noc_ache::after {
+          top: 25px;
+        }
+      }
+      .body {
+        max-width: 405px;
+        margin: auto;
+      }
+      .plashka {
+        font-size: 14px;
+      }
+      .double_body::after {
+        bottom: -70px;
+        left: -5%;
+        width: 110%;
+        height: 170px;
+      }
+    }
+    ._4 {
+      padding-top: 10px;
+      .postoperation {
+        .list_video {
+          padding: 2% 15px;
+        }
+      }
+      .diagnos_mistake {
+        .time_code {
+          .text-white {
+            margin: 1px 0;
+        }
+        }
+      }
+      .tunnel_syndrome {
+        .time_code {
+          .text-white {
+           line-height: 11px;
+          }
+        }
+      }
+      .icon_share {
+        max-width: 13px;
+        max-height: 13px;
+        padding-left: 0;
+        padding-top: 0;
+        margin-left: 5px;
+        margin-top: 3px;
+      }
+      .rating {
+        padding-bottom: 20px;
+        font-size: 14px;
+      }
+      .slide {
+        &.active {
+          ._doc_name {
+            font-size: 14px;
+          }
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+      .btn_list {
+        margin-bottom: 15px;
+      }
+      .pad_all {
+        padding: 25px 15px 15px;
+      }
+      .ul {
+        height: 100%;
+      }
+      .plashka {
+        font-size: 1.15em;
+        line-height: 22px;
+      }
+      .ache {
+        padding: 15px;
+        width: 90%;
+        margin: 0px auto;
+      }
+      .ul_list {
+        width: 90%;
+        margin: auto;
+      }
+    }
+    ._5 {
+      margin-top: 30px;
+      .celebrex {
+        .article {
+          ._grey {
+            padding: 30px;
+          }
+          .button_pink {
+            margin-left: 0;
+            margin-top: 15px;
+          }
+        }
+  
+        .pad_light {
+          margin-top: 0;
+        }
+        .paddings {
+          padding: 30px 20px;
+          height: 270px;
+        }
+        .first_block {
+          max-width: 65%;
+          margin: auto;
+        }
+        .second_block {
+          max-width: 33%;
+          margin: auto;
+        }
+        .tab {
+          margin-left: -17px;
+          max-height: 20px;
+          padding-right: 15px;
+        }
+        .paddings_first {
+          padding: 30px;
+          height: 270px;
+        }
+      }
+      .sermion {
+        .scheme {
+          margin: auto;
+        }
+        .plus {
+          max-width: 29px;
+        }
+        .left_pack {
+          max-width: 250px;
+        }
+        .right_pack {
+          max-width: 400px;
+        }
+        ._flex {
+          ._sm {
+            max-width: 200px;
+          }
+        }
+      }
+      ._grey {
+        margin: 20px auto;
+      }
+      .scheme_btn {
+        width: 24.5%;
+        margin: auto;
+      }
+  
+      .neirontin {
+        .article {
+          ._grey {
+            height: 180px;
+          }
+        }
+        .paddings {
+          padding: 20px;
+          width: 48%;
+          margin: auto;
+          &._l_third {
+            width: 98%;
+            height: 100%;
+            margin: 20px auto 0;
+          }
+        }
+      }
+      ._yellow {
+        position: relative;
+        width: 40%;
+  
+        margin: auto;
+        margin-bottom: 15px;
+        height: 60px;
+        padding: 22px;
+        &.relp_search {
+          padding: 22px;
+        }
+      }
+  
+      .sermion {
+        .check_blue {
+          margin-right: 20px;
+          max-width: 25px;
+          max-height: 25px;
+        }
+      }
+      ._preparat_content {
+        ._yellow {
+          i {
+            float: inherit;
+            margin-left: 10px;
+          }
+          &.active {
+            .down {
+              margin-bottom: -5px;
+            }
+          }
+        }
+      }
+    }
+    ._6 {
+      ._share {
+        margin: auto;
+        margin-top: 10px;
+      }
+      .pad_title {
+        padding-top: 50px;
+      }
+      ._violet {
+        max-width: 90%;
+        margin: 20px auto;
+        height: 440px;
+        ._mid_block {
+          margin-top: 20px;
+        }
+        ._end_block {
+          margin-top: 20px;
+        }
+      }
+    }
+    ._7 {
+      .logo {
+        max-width: 100px;
+        max-height: 28px;
+      }
+    }
+  }
+  @media (max-width: 720px) {
+    ._1 {
+      .doc {
+        max-width: 85px;
+      }
+      .pad_doc {
+        padding: 27px 18px 33px 28px;
+      }
+    }
+    .slider {
+      .doc {
+        max-width: 85px;
+      }
+      .pad_doc {
+        padding: 27px 18px 33px 28px;
+      }
+      .doc_1 {
+        max-width: 466px;
+      }
+      .doc_2 {
+        max-width: 466px;
+      }
+      .doc_3 {
+        max-width: 466px;
+      }
+      .doc_4 {
+        max-width: 466px;
+      }
+      .doc_5 {
+        max-width: 466px;
+      }
+    }
+    ._3 {
+      .neir_ache {
+        padding: 5px 20px;
+        max-width: 200px;
+      }
+      .ishemic {
+        width: 280px;
+      }
+    }
+    ._4 {
+      .tunnel_syndrome {
+        .time_code {
+          .text-white {
+           line-height: 10px;
+          }
+        }
+      }
+      .celebrex {
+        .slide {
+          ._doc_name {
+            margin-bottom: 17px;
+          }
+        }
+      }
+      .slide {
+        .cartoon {
+          max-width: 120px;
+        }
+      }
+      .chronic_ishemic_depress {
+        .time_code{
+          .text-white {
+            line-height: 10px;
+            margin: 5px 0;
+        } 
+      }
+      }
+      .chronic_ishemic_signs {
+        .time_code{
+          .text-white {
+            line-height: 12px;
+        } 
+      }
+      }
+      .kognitive_disfunction {
+        .time_code{
+          .text-white {
+            line-height: 10px;
+        } 
+      }
+      }
+      .chronic_ishemic {
+       
+        .time_code{
+          .text-white {
+            line-height: 10px;
+        } 
+      }
+      }
+      .therapy_migren {
+        .time_code{
+          .text-white {
+            line-height: 10px;
+            margin: 8px 0;
+        } 
+      }
+      }
+      .chronisation_therapy {
+        .time_code{
+          .text-white {
+            line-height: 10px;
+        } 
+      }
+      }
+      .musculoskeletal_pain {
+        .list_video {
+          padding: 0% 15px;
+        }
+      }
+      .trigeminal_neurology {
+        .list_video {
+          padding: 1% 15px;
+        }
+        .time_code{
+          .text-white {
+            line-height: 10px;
+            margin: 3px 0;
+        } 
+      }
+      }
+      .diabetic_polyneiropathy {
+        .time_code{
+          .text-white {
+            line-height: 10px;
+        } 
+      }
+      }
+      .radiculopatia {
+        .time_code{
+          .text-white {
+            line-height: 10px;
+            margin: 7px 0;
+        } 
+      }
+      }
+      .back_pain {
+        .rating {
+          padding-bottom: 10px;
+        }
+        .list_video {
+          padding: 1% 15px;
+        }
+      }
+    }
+    ._5 {
+      ._yellow {
+        padding: 20px;
+      }
+      ._yellow::after {
+        width: 15px;
+        top: 43%;
+      }
+    }
+  }
+  
+  @media (max-width: 707px) {
+    ._1 {
+      .logo_h {
+        max-width: 150px;
+      }
+      .burger {
+        width: 45px;
+      }
+  
+      .practice {
+        max-width: 35px;
+        margin-right: 18px;
+      }
+    }
+    ._2 {
+      .logo_h {
+        max-width: 150px;
+      }
+      .burger {
+        width: 45px;
+      }
+  
+      .practice {
+        max-width: 35px;
+        margin-right: 18px;
+      }
+    }
+    ._4 {
+      .tunnel_syndrome {
+        .time_code {
+          .text-white {
+           line-height: 9px;
+          }
+        }
+      }
+      .chronic_ishemic_depress {
+        .time_code {
+          .text-white {
+            margin: 4px 0;
+        }
+        }
+      }
+      .chronic_ishemic_signs {
+        .time_code {
+          .text-white {
+            margin: 5px 0;
+        }
+        }
+      }
+      .kognitive_disfunction {
+        .time_code {
+          .text-white {
+            margin: 5px 0;
+        }
+        }
+      }
+      .chronic_ishemic {
+        .time_code {
+          .text-white {
+            margin: 4px 0;
+        }
+        }
+      }
+      .therapy_migren {
+        .time_code {
+          .text-white {
+            margin: 6px 0;
+        }
+        }
+      }
+      .diagnos_mistake {
+        
+        .time_code {
+          .text-white {
+            font-size: 7px;
+            margin: 3px 0;
+            line-height: 9px;
+        }
+        }
+      }
+      .musculoskeletal_pain {
+        .time_code {
+          .text-white {
+            margin: 7px 0;
+        }
+        }
+      }
+      .trigeminal_neurology {
+        .time_code {
+          .text-white {
+            margin: 2px 0;
+        }
+        }
+      }
+      .diabetic_polyneiropathy {
+        .time_code {
+          .text-white {
+            margin: 4px 0;
+        }
+        }
+      }
+      .radiculopatia {
+        .time_code {
+          .text-white {
+            margin: 5px 0;
+        }
+        }
+      }  
+      
+    }
+    ._5 {
+      .sermion {
+        .left_pack {
+          max-width: 300px;
+        }
+        .right_pack {
+          max-width: 400px;
+        }
+        ._flex {
+          ._sm {
+            max-width: 200px;
+          }
+        }
+      }
+    }
+    .practicum_desk {
+      display: none;
+    }
+    .practicum_mob {
+      padding-top: 10px;
+      margin: auto;
+    }
+  }
+  
+  @media only screen and (min-width: 707px) {
+    .practicum_mob {
+      display: none;
+    }
+    .practicum_desk {
+      display: block;
+    }
+  }
+  @media (max-width: 639px) {
+    .wrapper {
+      padding-bottom: 10px;
+    }
+    .grid {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .section__content .section__content {
+      margin-top: 1em;
+    }
+    .grid__row._sm_reverse {
+      flex-direction: row-reverse;
+    }
+    .grid__row._sm_reverse_col {
+      flex-direction: column-reverse;
+    }
+    .grid__row._sm_reverse .text-right {
+      text-align: left;
+    }
+    .grid__row._sm_content_center {
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+    .grid__row._sm_items_start {
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+    }
+    .grid__row._sm_items_end {
+      -webkit-box-align: end;
+      -ms-flex-align: end;
+      align-items: flex-end;
+    }
+    .grid__row._sm_items_center {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+    .grid__row._sm_items_center {
+      align-items: space-between;
+    }
+    .grid__col._sm_1 {
+      width: 8.33333%;
+    }
+    .grid__col._sm_2 {
+      width: 16.66667%;
+    }
+    .grid__col._sm_3 {
+      width: 25%;
+    }
+    .grid__col._sm_4 {
+      width: 33.33333%;
+    }
+    .grid__col._sm_5 {
+      width: 41.66667%;
+    }
+    .grid__col._sm_6 {
+      width: 45%;
+    }
+    .grid__col._sm_7 {
+      width: 58.33333%;
+    }
+    .grid__col._sm_8 {
+      width: 66.66667%;
+    }
+    .grid__col._sm_9 {
+      width: 75%;
+    }
+    .grid__col._sm_10 {
+      width: 83.33333%;
+    }
+    .grid__col._sm_11 {
+      width: 91.66667%;
+    }
+    .grid__col._sm_12 {
+      width: 100%;
+    }
+    ._sm_0 {
+      display: none;
+    }
+    body {
+      font-size: 14px;
+    }
+    .break {
+      word-break: break-word;
+    }
+    .title {
+      //30
+      &._ex_lg {
+        font-size: 1.458em;
+      }
+      //28
+      &._ex_pack {
+        font-size: 1.458em;
+      }
+      //22
+      &._lg {
+        font-size: 1.458em;
+        line-height: 1.25;
+      }
+      //26
+      &._md {
+        font-size: 1.458em;
+        line-height: 1.3;
+      }
+      //20
+      &._md_2 {
+        font-size: 1.2em;
+        line-height: 1.3;
+      }
+      //18
+      &._sm {
+        font-size: 0.9em;
+        line-height: 1.388;
+      }
+      //15
+      &._doc_name {
+        font-size: 0.7em;
+        line-height: 18px;
+      }
+      //14
+      &._ex_pre_sm {
+        font-size: 0.7em;
+      }
+      //12
+      &._ex_sm2 {
+        font-size: 0.7em;
+      }
+      //11
+      &._ex_sm {
+        font-size: 0.7em;
+      }
+    }
+  
+    ._2 {
+      .doc {
+        max-width: 50px;
+        max-height: 50px;
+      }
+      .slider {
+        .slider__item {
+          height: 155px;
+        }
+      }
+    }
+    ._3 {
+      .migren {
+        width: 154px;
+        padding: 10px 25px;
+      }
+      .neir_ache {
+        width: 250px;
+        padding: 5px 20px;
+      }
+      .ishemic {
+        width: 200px;
+        padding: 10px;
+      }
+      .noc_ache {
+        width: 240px;
+        padding: 20px 25px;
+      }
+      .pulsing {
+        &.noc_ache::after {
+          top: 25px;
+        }
+      }
+      .body {
+        max-width: 405px;
+        margin: auto;
+      }
+      .plashka {
+        font-size: 14px;
+      }
+      .double_body::after {
+        bottom: -80px;
+        left: -5%;
+        width: 110%;
+      }
+    }
+  
+    ._4 {
+      
+      .fake_radiculopathy {
+        position: absolute;
+        top: 28%;
+        width: 1px;
+        height: 1px;
+      }
+      .fake_diabetic {
+        position: absolute;
+        top: 22%;
+        width: 1px;
+        height: 1px;
+      }
+      .fake_backache {
+        position: absolute;
+        top: 34%;
+        width: 1px;
+        height: 1px;
+      }
+      .fake_diagnos {
+        top: 25%;
+      }
+      .grey_films {
+        padding: 19px;
+      }
+      video {
+        margin-bottom: 30px;
+      }
+      .only_mob {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #fff;
+      }
+      .time_code {
+        
+        p {
+          padding-bottom: 10px;
+          font-weight: 500;
+        }
+        &.active {
+          p {
+            border: none;
+            padding-left: 0;
+            font-weight: bold;
+          }
+          .or {
+            color: #EA7600;
+          }
+          .blue {
+            color: #4094B0;
+          }
+          .rose {
+            color: #9E007E;
+          }
+          .viol {
+            color: #703E97;
+          }
+        }
+      }
+      .tunnel_syndrome {
+        .list_video {
+          padding: 3% 15px;
+        }
+        .time_code {
+          
+          .text-white {
+           line-height: 13px;
+          }
+        }
+      }
+      .sermion_films {
+        .film {
+          max-width: 130px;
+        }
+      }
+      .chronic_ishemic_depress {
+        .time_code {
+          .text-white {
+            font-size: 10px;
+            line-height: 14px;
+            margin: 8px 0;
+        }
+        }
+      }
+      .chronic_ishemic_signs {
+        .time_code {
+          .text-white {
+            font-size: 10px;
+            line-height: 16px;
+            margin: 8px 0;
+        }
+        }
+      }
+      .kognitive_disfunction {
+        .time_code {
+          .text-white {
+            font-size: 10px;
+            line-height: 16px;
+            margin: 8px 0;
+        }
+        }
+      }
+      .chronic_ishemic {
+        .time_code {
+          .text-white {
+            font-size: 10px;
+            line-height: 15px;
+            margin: 8px 0;
+        }
+        }
+      }
+      .therapy_migren {
+        .time_code {
+          .text-white {
+            font-size: 10px;
+            line-height: 16px;
+            margin: 9px 0;
+        }
+        }
+      }
+      .chronisation_therapy {
+        .time_code {
+          .text-white {
+            font-size: 10px;
+            line-height: 15px;
+            margin: 8px 0;
+        }
+        }
+      }
+      .diagnos_mistake {
+        .time_code {
+          .text-white {
+            font-size: 10px;
+            line-height: 12px;
+            margin: 6px 0;
+        }
+        }
+      }
+      .musculoskeletal_pain {
+        .time_code {
+          .text-white {
+            margin: 15px 0;
+        }
+        }
+      }
+      .trigeminal_neurology {
+        .time_code {
+          .text-white {
+            font-size: 10px;
+            line-height: 14px;
+            margin: 8px 0;
+        }
+        }
+      }
+      .diabetic_polyneiropathy {
+        .time_code {
+          .text-white {
+            font-size: 10px;
+            line-height: 15px;
+            margin: 8px 0;
+        }
+        }
+      }
+      .radiculopatia {
+        .time_code {
+          .text-white {
+            line-height: 15px;
+            margin: 6px 0;
+        }
+        }
+      }
+      .musculoskeletal_pain {
+        .list_video {
+          padding: 5% 15px;
+        }
+      }
+      .back_pain {
+        .list_video {
+          padding: 7% 15px;
+        }
+      }
+      padding-top: 30px;
+      .video {
+        padding-top: 20px;
+      }
+      .btn_list::after {
+        top: 20px;
+      }
+      .pad_all {
+        padding: 20px 15px;
+      }
+      .plashka {
+        font-size: 1.2em;
+      }
+      .ache {
+        padding: 15px 35px;
+        width: 90%;
+        margin: 10px auto;
+      }
+      .ul_list {
+        width: 90%;
+        margin: auto;
+      }
+      .time_code {
+        .text-white {
+          font-size: 12px;
+          margin: 8px 0;
+        }
+      }
+    }
+    ._5 {
+      .neirontin {
+        .paddings {
+          height: 100%;
+        }
+      }
+      .sermion {
+        .pad_light {
+          margin-bottom: 0;
+        }
+        .priem {
+          margin-top: 20px;
+        }
+        .scheme {
+          margin: auto;
+        }
+      }
+  
+      .pad_light {
+        margin-top: 13px;
+        width: 95%;
+        margin: auto;
+        margin-bottom: 20px;
+        padding: 30px;
+      }
+      ._flex {
+        flex-wrap: wrap;
+        &._check_bl {
+          flex-wrap: nowrap;
+         
+        }
+      }
+      .celebrex {
+        .cel_pack {
+          max-width: 80%;
+          margin: auto;
+          margin-top: 20px;
+        }
+        .paddings {
+          padding: 30px 20px;
+          height: 270px;
+        }
+        .first_block {
+          max-width: 90%;
+          margin: auto;
+        }
+        .second_block {
+          max-width: 90%;
+          margin: auto;
+          height: 100%;
+          margin-top: 20px;
+        }
+        .tab {
+          margin-left: -47px;
+        }
+  
+        .paddings_first {
+          padding: 30px;
+          height: 270px;
+        }
+        .buttons_yel {
+          margin-bottom: 20px;
+          ._flex {
+            flex-wrap: wrap;
+          }
+        }
+      }
+      ._grey {
+        max-width: 80% !important;
+        margin: 20px auto;
+      }
+      .scheme_btn {
+        min-width: 48%;
+        margin-bottom: 15px;
+      }
+      .neirontin {
+        .paddings {
+          padding: 20px;
+          width: 48%;
+          margin: auto;
+          &._l_third {
+            width: 98%;
+            height: 100%;
+            margin: 20px auto 0;
+          }
+        }
+      }
+      ._yellow {
+        height: 60px;
+        width: 49%;
+        &._downlo {
+          padding: 22px;
+        }
+      }
+      ._preparat_content {
+        ._yellow {
+          i {
+            float: inherit;
+            margin-left: 10px;
+          }
+          &.active {
+            .down {
+              margin-bottom: -5px;
+            }
+          }
+        }
+      }
+    }
+    ._6 {
+      ._share {
+        display: flex;
+        justify-content: center;
+        max-width: 296px;
+        height: 55px;
+        padding: 18px;
+      }
+      .pad_title {
+        padding-top: 50px;
+      }
+      ._violet {
+        max-width: 90%;
+        margin: 20px auto;
+        height: 370px;
+      }
+    }
+    ._7 {
+      .ended {
+        margin-top: 20px;
+        ._flex {
+          justify-content: center;
+          p {
+            text-align: center;
+          }
+        }
+      }
+      .logo {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  @media (max-width: 580px) {
+    ._3 {
+      .double_body::after {
+        bottom: -80px;
+        left: -5%;
+        width: 115%;
+    }
+    }
+    ._4 {
+      ._share {
+        width: 264px;
+      }
+      .socials {
+        width: 264px;
+      }
+      .tunnel_syndrome {
+        .list_video {
+          padding: 1% 15px;
+        }
+        .time_code {
+          .text-white {
+           line-height: 13px;
+          }
+        }
+      }
+      .chronic_ishemic_depress {
+        .time_code {
+          
+          .text-white {
+            line-height: 12px;
+          }
+        }
+      }
+      .chronic_ishemic_signs {
+        .time_code {
+          
+          .text-white {
+            line-height: 14px;
+          }
+        }
+      }
+      .kognitive_disfunction {
+        .time_code {
+          
+          .text-white {
+            line-height: 12px;
+          }
+        }
+      }
+      .chronic_ishemic {
+        .time_code {
+          
+          .text-white {
+            line-height: 12px;
+          }
+        }
+      }
+      .therapy_migren {
+        .time_code {
+          
+          .text-white {
+            line-height: 14px;
+          }
+        }
+      }
+      .chronisation_therapy {
+        .time_code {
+          
+          .text-white {
+            line-height: 12px;
+          }
+        }
+      }
+      .diagnos_mistake {
+        .time_code {
+          
+          .text-white {
+            line-height: 10px;
+            margin: 5px 0;
+          }
+        }
+      }
+      .musculoskeletal_pain {
+        .time_code {
+          .text-white {
+            margin: 12px 0;
+          }
+        }
+      }
+      .back_pain {
+        .time_code {
+          .text-white {
+            margin: 12px 0;
+          }
+        }
+      }
+      .trigeminal_neurology {
+        .time_code {
+          .text-white {
+            line-height: 12px;
+            margin: 7px 0;
+          }
+        }
+      }
+      .diabetic_polyneiropathy {
+        .time_code {
+          .text-white {
+            line-height: 12px;
+          }
+        }
+      }
+      .radiculopatia {
+        .time_code {
+          .text-white {
+            line-height: 13px;
+          }
+        }
+      }
+      .list_video {
+        padding: 3% 15px;
+      }
+      .time_code {
+        .text-white {
+          font-size: 11px;
+          margin: 3px 0;
+        }
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    .popup {
+      max-width: 200px;
+    }
+    .wrapper {
+      overflow-x: hidden;
+      background: var(--color-white);
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      background-image: url(../../public/bg_mob.png);
+      background-repeat: no-repeat;
+      padding-top: 17px;
+      background-size: cover;
+      padding-bottom: 10px;
+      background-position-y: bottom;
+      background-position-x: right;
+  }
+  i {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-left: 8px;
+    margin-bottom: 3px;
+  }
+  .slider {
+    padding: 24px 20px 15px;
+  }
+    ._1 {
+      .logo_h {
+        max-width: 80px;
+      }
+      ._ex_lg {
+        font-size: 16px;
+      }
+      ._flex {
+        width: 100%;
+        justify-content: space-between;
+        &._mobwithwr {
+          flex-wrap: wrap;
+        }
+      }
+      ._practice_block {
+        padding-bottom: 15px;
+      }
+      .light_pad {
+        padding: 30px 16px;
+        margin-top: 20px;
+      }
+    }
+    ._2 {
+      .practice {
+        margin: auto;
+        max-height: 35px;
+      }
+      ._flex {
+        justify-content: space-around;
+        &._mobwithwr {
+          flex-wrap: wrap;
+          max-width: 141px;
+        }
+      }
+      ._practice_block {
+        padding-bottom: 15px;
+        p {
+          text-align: center;
+         
+          &._lg {
+            font-size: 16px;
+          }
+        }
+      }
+      .light_pad {
+        padding: 30px 16px;
+        margin-top: 20px;
+      }
+    }
+    ._3 {
+      .pulsing.neir_ache::after {
+        top: -15px;
+        left:-15px;}
+      .pulsing.migren::after {
+        top: -15px;
+        left: -15px;
+    }
+    .pulsing.noc_ache::after {
+      top: 35px;
+      left: -15px;
+  }
+    .pulsing.ishemic::after {
+      top: -15px;
+      left: -15px;
+  }
+      .pulsing::after {
+        content: url(../../public/pulsing_mob.png);
+        position: absolute;
+        -webkit-animation: pulsing 2s infinite;
+        animation: pulsing 2s infinite;
+    }
+      .plashka {
+        font-size: 12px;
+        line-height: 14px;
+      }
+      .body {
+        max-width: 207px;
+        padding-top: 0;
+      }
+      .double_body::after {
+        width: 115%;
+        height: 130px;
+        left: 0%;
+      }
+      .migren {
+        left: 15%;
+        width: 130px;
+        padding: 15px 10px;
+      }
+      .noc_ache {
+        width: 180px;
+        padding: 15px 10px;
+      }
+      .ishemic {
+        width: 170px;
+        padding: 10px;
+      }
+      .neir_ache {
+        width: 150px;
+        padding: 10px;
+      }
+    }
+    ._4 {
+      padding-top: 0;
+      padding-bottom: 60px;
+      
+     
+      ._share {
+        width: 264px;
+      }
+      .socials {
+        width: 264px;
+        background-color: #f5f6f6;
+      }
+   
+      .video {
+        &.active {
+          padding-top: 65px;
+        }
+      }
+      .list_li {
+        &.active {
+          .plashka::before {
+            content: "";
+            background-size: contain;
+            height: 10px;
+            width: 10px;
+            position: absolute;
+            left: 0;
+            background-repeat: no-repeat;
+            top: 25%;
+        }
+        }
+        &.list_blue {
+          &.active {
+            .plashka::before {
+              content: "";
+              background-size: contain;
+              height: 10px;
+              width: 10px;
+              position: absolute;
+              left: 0;
+              background-repeat: no-repeat;
+              top: 25%;
+          }
+          }
+        }
+        &.list_rose {
+          &.active {
+            .plashka::before {
+              content: "";
+              background-size: contain;
+              height: 10px;
+              width: 10px;
+              position: absolute;
+              left: 0;
+              background-repeat: no-repeat;
+              top: 25%;
+          }
+          }
+        }
+        &.list_viol {
+          &.active {
+            .plashka::before {
+              content: "";
+              background-size: contain;
+              height: 10px;
+              width: 10px;
+              position: absolute;
+              left: 0;
+              background-repeat: no-repeat;
+              top: 25%;
+          }
+          }
+        }
+      }
+      .tunnel_syndrome {
+        .list_video {
+          padding: 0% 15px;
+        }
+        .time_code {
+          .text-white {
+           line-height: 10px;
+          }
+        }
+      }
+      .chronic_ishemic_depress {
+        .time_code {
+          .text-white {
+            font-size: 9px;
+            line-height: 10px;
+            margin: 5px 0;
+          }
+        }
+      }
+      .chronic_ishemic_signs {
+        .time_code {
+          .text-white {
+            font-size: 9px;
+            line-height: 11px;
+          }
+        }
+      }
+      .kognitive_disfunction {
+        .time_code {
+          .text-white {
+            font-size: 9px;
+            line-height: 10px;
+            margin: 7px 0;
+          }
+        }
+      }
+      .chronic_ishemic {
+        .time_code {
+          .text-white {
+            font-size: 9px;
+            line-height: 10px;
+            margin: 6px 0;
+          }
+        }
+      }
+      .therapy_migren {
+        .time_code {
+          .text-white {
+            font-size: 9px;
+            line-height: 10px;
+          }
+        }
+      }
+      .chronisation_therapy {
+        .time_code {
+          .text-white {
+            font-size: 9px;
+            line-height: 10px;
+            margin: 6px 0;
+          }
+        }
+      }
+   .diagnos_mistake {
+    .time_code {
+      .text-white {
+        font-size: 9px;
+        line-height: 9px;
+        margin: 1px 0;
+      }
+    }
+   }
+      .trigeminal_neurology {
+        .time_code {
+          .text-white {
+            font-size: 9px;
+            line-height: 10px;
+            margin: 4px 0;
+          }
+        }
+      }
+      .diabetic_polyneiropathy {
+        .time_code {
+          .text-white {
+            font-size: 9px;
+            line-height: 11px;
+            margin: 5px 0;
+          }
+        }
+      }
+      .radiculopatia {
+        .time_code {
+          .text-white {
+            line-height: 11px;
+          }
+        }
+      }
+      .musculoskeletal_pain {
+        .list_video {
+          padding: 1% 15px;
+        }
+      }
+      .back_pain {
+        .list_video {
+          padding: 5% 15px;
+        }
+      }
+      .rating {
+        font-size: 14px;
+      }
+      .radiculopatia {
+        .text-white {
+          font-size: 7px;
+        }
+      }
+      .list_video {
+        padding: 1% 15px;
+      }
+      .time_code {
+        .text-white {
+          font-size: 9px;
+          margin: 0;
+          line-height: 13px;
+        }
+      }
+    }
+    ._5 {
+      .top_mar_ser {
+        margin-top: 15px;
+      }
+      .relpax {
+        .relpax_pack {
+          max-width: 90%;
+          margin-top: 40px;
+        }
+      }
+      .sermion {
+        .scheme {
+          max-width: 90%;
+        }
+        .left_pack {
+          max-width: 90%;
+        }
+        .right_pack {
+          max-width: 90%;
+        }
+      }
+      ._yellow {
+        width: 90%;
+        margin-bottom: 15px;
+        padding: 21px;
+      }
+      ._yellow::after {
+        top: 40%
+      }
+      .rasp {
+        max-width: 80%;
+        max-height: 80%;
+        margin: auto;
+      }
+      .neirontin {
+        .paddings {
+          margin-top: 20px;
+          width: 90%;
+          &._l_third {
+            width: 90%;
+          }
+        }
+      }
+      .pad_light {
+        margin-top: 13px;
+        width: 95%;
+        margin: auto;
+        margin-bottom: 20px;
+      }
+      .celebrex {
+        .tab {
+          max-width: 160px;
+        }
+        .paddings_first {
+          height: 290px;
+        }
+        .pad_light {
+          padding: 10px;
+        }
+        .pad_both {
+          padding-top: 27px;
+          padding-bottom: 13px;
+        }
+      }
+      ._flex {
+        flex-wrap: wrap;
+        &.pril {
+          align-items: center;
+          flex-wrap: nowrap;
+        }
+        &._check_bl {
+          flex-wrap: nowrap;
+        }
+      }
+      .scheme_btn {
+        min-width: 48%;
+        margin-bottom: 15px;
+      }
+    }
+    ._6 {
+      ._share {
+        max-width: 85%;
+        position: initial;
+        float: inherit;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+      ._violet {
+        &._first {
+          height: 450px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+        &._second {
+          height: 400px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+        &._third {
+          height: 320px;
+          margin-top: 20px;
+          margin-bottom: 0px;
+        }
+      }
+    }
+    ._7 {
+      .mar_top {
+        margin-top: 42px;
+        margin-bottom: 26px;
+      }
+      .ended {
+        padding-top: 20px;
+      }
+    }
+  }
+  @media (max-width: 450px) {
+   
+    ._4 {
+      .fake_radiculopathy {
+        position: absolute;
+        top: 31%;
+        width: 1px;
+        height: 1px;
+      }
+      .fake_backache {
+top: 38%;
+      }
+      .fake_diagnos {
+        top: 30%;
+      }
+      .tunnel_syndrome {
+        .list_video {
+          padding: 0% 15px;
+        }
+        .time_code {
+          .text-white {
+           line-height: 8px;
+          }
+        }
+      }
+      .chronic_ishemic_depress {
+        .time_code {
+          .text-white {
+            font-size: 8px;
+            line-height: 9px;
+            margin: 4px 0;
+          }
+        }
+      }
+      .chronic_ishemic_signs {
+        .time_code {
+          .text-white {
+            font-size: 8px;
+            line-height: 9px;
+            margin: 9px 0;
+          }
+        }
+      }
+      .kognitive_disfunction {
+       
+          .time_code {
+            .text-white {
+              font-size: 8px;
+              line-height: 9px;
+              margin: 6px 0;
+            }
+          }
+      }
+      .chronic_ishemic {
+        .time_code {
+          .text-white {
+            font-size: 8px;
+            line-height: 9px;
+            margin: 5px 0;
+          }
+        } 
+      }
+      .therapy_migren {
+        .time_code {
+          .text-white {
+            font-size: 8px;
+            line-height: 9px;
+            margin: 8px 0;
+          }
+        } 
+      }
+      .chronisation_therapy {
+        .time_code {
+          .text-white {
+            font-size: 8px;
+            line-height: 9px;
+            margin: 4px 0;
+          }
+        } 
+      }
+     .diagnos_mistake {
+       .list_video {
+         padding: 2% 15px;
+       }
+      .time_code {
+        .text-white {
+          font-size: 7px;
+          margin: 2px 0;
+          line-height: 8px;
+        }
+      } 
+     }
+      .back_pain {
+        .time_code {
+          .text-white {
+            margin: 14px 0;
+          }
+        } 
+      }
+      .trigeminal_neurology {
+        .time_code {
+          .text-white {
+            font-size: 8px;
+            margin: 2px 0;
+            line-height: 9px;
+          }
+        } 
+      }
+      .diabetic_polyneiropathy {
+        .time_code {
+          .text-white {
+            font-size: 8px;
+            margin: 2px 0;
+            line-height: 10px;
+          }
+        }
+      }
+      .radiculopatia {
+        .time_code {
+          .text-white {
+            font-size: 8px;
+            margin: 4px 0;
+            line-height: 10px;
+          }
+        }
+      }
+      .musculoskeletal_pain {
+        .time_code {
+          
+          .text-white {
+            margin: 7px 0;
+          }
+        } 
+        .list_video {
+          padding: 1% 15px;
+        }
+      }
+      .back_pain {
+        .list_video {
+          padding: 1% 15px;
+        }
+      }
+      .play_img {
+        width: 70px;
+      }
+      .play_icon {
+        margin-top: 15%;
+      }
+      .time_code {
+        .text-white {
+          font-size: 8px;
+          margin: 2px 0;
+          line-height: 14px;
+        }
+      }
+    }
+    ._5 {
+      .celebrex {
+        .paddings_first {
+          height: 320px;
+      }
+        .tab {
+          max-width: 95px;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+  @media (max-width: 425px) {
+    ._3 {
+      .migren {
+        left: 13%;
+      }
+    }
+    ._4 {
+     
+      .chronic_ishemic_depress {
+        .time_code {
+          .text-white {
+            font-size: 7px;
+            line-height: 8px;
+            margin: 5px 0;
+          }
+        }
+      }
+      .chronic_ishemic_signs {
+        .time_code {
+          .text-white {
+            margin: 7px 0;
+          }
+        }
+      }
+      .kognitive_disfunction {
+        .time_code {
+          .text-white {
+            font-size: 7px;
+            margin: 4px 0;
+          }
+        }
+      }
+      .therapy_migren {
+        .time_code {
+          .text-white {
+            font-size: 7px;
+            margin: 5px 0;
+          }
+        }
+      }
+      .chronic_ishemic {
+        .time_code {
+          .text-white {
+            font-size: 7px;
+            margin: 3px 0;
+          }
+        }
+      }
+      .diagnos_mistake {
+        .time_code {
+          .text-white {
+            font-size: 7px;
+            line-height: 7px;
+            margin: 2px 0;
+          }
+        }
+      }
+      .musculoskeletal_pain {
+        .time_code {
+          .text-white {
+            line-height: 12px;
+          }
+        }
+      }
+      .back_pain {
+        .time_code {
+          .text-white {
+            margin: 17px 0;
+          }
+        }
+      }
+      .diabetic_polyneiropathy {
+        .time_code {
+          .text-white {
+            line-height: 8px;
+          }
+        }
+      }
+      .radiculopatia {
+        .time_code {
+          .text-white {
+            line-height: 9px;
+          }
+        }
+      }
+      .back_pain {
+        .list_video {
+          padding: 5% 15px;
+        }
+      }
+      .play_icon {
+        margin-top: 13%;
+      }
+      .play_img {
+        width: 70px;
+      }
+      .time_code {
+        .text-white {
+          line-height: 9px;
+          margin: 3px 0;
+        }
+      }
+      .diabetic_polyneiropathy {
+        .list_video {
+          padding: 3% 15px;
+        }
+      }
+      .trigeminal_neurology {
+        .list_video {
+          padding: 2% 10px;
+        }
+        .time_code {
+          .text-white {
+            width: 170px;
+          }
+        }
+      }
+      .postoperation {
+        .list_video {
+          padding: 1% 15px;
+        }
+      }
+      .tunnel_syndrome {
+        .list_video {
+          padding: 0% 15px;
+        }
+        .time_code {
+          .text-white {
+           line-height: 7px;
+          }
+        }
+      }
+    }
+    
+  }
+  @media (max-width: 375px) {
+    .grid__col {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    ._3 {
+      .migren {
+        left: 8%;
+        height: auto;
+      }
+      .neir_ache {
+        left: -3%;
+        height: auto;
+      }
+      .noc_ache {
+        width: 40%;
+        padding: 10px;
+        height: auto;
+      }
+      .ishemic {
+        width: 48%;
+        height: auto;
+        padding: 10px;
+      }
+    }
+    ._4 {
+      .play_icon {
+        margin-top: 14%;
+        margin-bottom: 6%;
+      }
+      .postoperation {
+        .list_video {
+          padding: 0% 15px;
+        }
+      }
+      .tunnel_syndrome {
+        .list_video {
+          padding: 0% 15px;
+        }
+        .time_code {
+          .text-white {
+           line-height: 9px;
+           margin: 8px 0;
+          }
+        }
+      }
+      .list_video {
+        padding: 4% 15px;
+      }
+      .rating {
+        padding-bottom: 0px;
+        font-size: 14px;
+      }
+      .trigeminal_neurology {
+        .list_video {
+          padding: 0% 10px;
+        }
+      }
+      .time_code {
+        .text-white {
+          width: 300px;
+          margin: 4px 0;
+        }
+      }
+      .diabetic_polyneiropathy {
+        .list_video {
+          padding: 2% 10px;
+        }
+        .time_code {
+          .text-white {
+            width: 300px;
+            margin: 4px 0;
+          }
+        }
+        .rating {
+          padding-bottom: 5px;
+        }
+      }
+      .trigeminal_neurology {
+        .list_video {
+          padding: 2% 10px;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 350px) {
+    .section .ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__link_more {
+      border: none !important;
+      background: #ffd300 !important;
+      border-radius: 40px !important;
+      padding: 13px 24px !important;
+      margin-top: 28px !important;
+  }
+    .grid__col {
+      padding-left: 8px !important;
+      padding-right: 8px !important;
+    }
+    ._3 {
+      .noc_ache {
+        padding: 10px;
+        width: 150px;
+      }
+      .ishemic {
+        width: 140px;
+        height: auto;
+      }
+    }
+    ._4 {
+      .play_icon {
+        margin-top: 10%;
+        margin-bottom: 6%;
+      }
+      .tunnel_syndrome {
+        .list_video {
+          padding: 0% 15px;
+        }
+        .time_code {
+          .text-white {
+           line-height: 9px;
+           margin: 5px 0;
+          }
+        }
+      }
+      .diabetic_polyneiropathy {
+        .list_video {
+          padding: 2% 10px;
+        }
+        .time_code {
+          .text-white {
+            line-height: 7px;
+            font-size: 7px;
+            margin: 1.5px 0;
+          }
+        }
+      }
+    }
+  }
+  
+  //display:none
+  ._header_content {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  
+  ._preparat_content {
+    display: none;
+    &.active {
+      display: block;
+    }
+    ._yellow {
+      i {
+        border: solid #2a276e;
+        border-width: 0 3px 3px 0;
+        float: right;
+      }
+      .down {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+      }
+      &.active {
+        .down {
+          transform: rotate(225deg);
+          -webkit-transform: rotate(225deg);
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+  
+  ._grey_blocks {
+    display: none;
+    &.active {
+      display: flex;
+    }
+  }
+  
+  .video {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  
+  .ul_list {
+    display: none;
+    &.active {
+      display: block;
+      padding-left: 0;
+    }
+  }
+  .video_plashka {
+    &.active {
+      display: none;
+    }
+  }
+  
+  .grey_films {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 639px)  {
+    ._4 {
+     .only_mob {
+       display: block;
+     }
+     .only_desk {
+       display: none;
+     }
+    }
+  }
+  
